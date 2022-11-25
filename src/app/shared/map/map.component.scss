@@ -1,0 +1,57 @@
+// #map {
+//     width: 45%;
+//     height: 70vh;
+
+//     .leaflet-control-container {
+//         .leaflet-right {
+//             right: 0;
+//             display: none!important;
+//         }
+//     }
+// }
+
+// .map-loading {
+//     width: 45%;
+//     position: absolute;
+//     height: 70vh;
+//     right: 0;
+//     background-color: var(--opacity);
+//     z-index: 1000;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+
+//     &.hidden {
+//         opacity: 0;
+//         visibility: hidden;
+//     }
+
+//     ::ng-deep .mat-progress-spinner circle {
+//         stroke: var(--red);
+//     }
+
+
+// }
+
+// .leaflet-interactive {
+//     stroke: var(--red);
+//     stroke-width: 5;
+// }
+
+
+.map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+  }
+  
+  .map-frame {
+    height: 100%;
+  }
+  
+  #map {
+    height: 100%;
+  }

@@ -1,0 +1,13 @@
+    <mat-form-field appearance="fill" class="od_input">
+      <mat-label>Buscar {{fieldName}}</mat-label>
+      <input type="text"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto"
+             (keyup)="getPoint($event)">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option.address" (click)="sendPoint(option)">
+          {{option.address}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>

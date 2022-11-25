@@ -1,0 +1,80 @@
+<section class="main-budget">
+    <div class="divider"></div>
+    <div class="budget">
+        
+      <mat-stepper class="budget-form"  #stepper>
+        <mat-step [stepControl]="service.rotaFormGroup">
+          <form [formGroup]="service.rotaFormGroup">
+            <ng-template matStepLabel>Rota</ng-template>
+           
+            <div class="rota">
+              <mat-form-field appearance="fill" class="date-field">
+                <mat-label>Selecione a data estimada</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matIconPrefix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <ul class="od_forms">
+                <li>
+                  <app-point-field 
+                    fieldName="Origem"
+                    (pointOut)="onOrigin($event)" class="point-field"></app-point-field>
+                </li>
+               
+                <li formArrayName="points" *ngFor="let point of points.controls; index as i">
+                  <app-point-field fieldName="Ponto" (pointOut)="onPoint($event, i)" class="point-field"></app-point-field>
+
+                  <button class="btn-remove" type="button" (click)="removePoint(i)">x</button>
+                </li>
+                <li>
+                  <app-point-field fieldName="Destino" (pointOut)="onDestiny($event)" class="point-field"></app-point-field>
+
+                </li>
+                
+              </ul>
+              <button (click)="addPoint()" class="add-point">
+                <span class="icon">+</span>
+                <span>Adicionar ponto</span>
+              </button>
+            </div>
+            <pre>
+            </pre>
+            <div class="footer-stepper end">
+              
+              <button mat-button matStepperNext class="primary-btn" [disabled]="!service.rotaFormGroup.valid" (click)="confirmRoute(service.rotaFormGroup)">Continuar</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="service.custoFormGroup">
+          <form [formGroup]="service.custoFormGroup">
+            <ng-template matStepLabel>Custos</ng-template>
+            <div class="rota">
+              <div class="marker-slider">
+                <span class="circle active"></span>
+                <span class="circle" [ngClass]="secondCircle ? 'active' : ''"></span>
+              </div>
+              <div class="od_forms">
+                <h4>{{service.rotaFormGroup.controls['origem'].value}}</h4>
+                <h4>{{service.rotaFormGroup.controls['destino'].value}}</h4>
+              </div>
+            </div>
+            <div class="footer-stepper">
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Solicitar cotação</ng-template>
+          <p>You are now done.</p>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div>
+        </mat-step>
+      </mat-stepper>
+      <div class="view-map">
+        <app-map></app-map>
+      </div>
+    </div>
+  </section>
