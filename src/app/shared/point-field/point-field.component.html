@@ -5,6 +5,10 @@
              [formControl]="myControl"
              [matAutocomplete]="auto"
              (keyup)="getPoint($event)">
+             <mat-spinner matSuffix class="spinner" *ngIf="loading === true && isValid === false" diameter="24"></mat-spinner>
+
+             <mat-icon matSuffix *ngIf="loading === false && isValid === true">check_circle_outline</mat-icon>
+             <mat-icon matSuffix *ngIf="loading === false && isInvalid === true" class="cancel-icon">add_circle_outline</mat-icon>
       <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
         <mat-option *ngFor="let option of filteredOptions | async" [value]="option.address" (click)="sendPoint(option)">
           {{option.address}}

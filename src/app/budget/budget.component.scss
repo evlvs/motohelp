@@ -1,5 +1,8 @@
 .main-budget {
-    background-color: #fff;
+    // background-color: #fff;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 83%, rgba(217,57,56,1) 83%);
+
     .divider {
         background-color: #000;
         height: 160px;
@@ -7,20 +10,67 @@
     
     .budget {
         position: relative;
-        top: -80px;
+        top: -72px;
         margin: 0 5vw;
         // background-color: var(--red);
         display: flex;
         height: 70%;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    
+        .send-message{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 55%;
+            min-height: 55vh;
+            background-color: #fff;
+
+            .loading {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .sended-message {
+                display: flex;
+                text-align: center;
+                flex-direction: column;
+                align-items: center;
+
+                h1 {
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 32px;
+                    line-height: 39px;
+                    text-align: center;
+                    letter-spacing: 0.03em;
+                    color: var(--red);
+                }
+
+                .icon {
+                    width: 95px;
+                    height: 95px;
+                    background-color: var(--red);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #fff;
+                    font-size: 42px;
+                }
+            }
+        }
+
         .budget-form {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             height: 100%;
             width: 55%;
-            
+          
             ::ng-deep {
                 .mat-horizontal-stepper-wrapper {
                     .mat-horizontal-stepper-header-container {
@@ -88,8 +138,8 @@
                     .od_forms {
                         display: flex;
                         flex-direction: column;
-                        width: 100%;
-                        min-height: 202px;
+                        width: calc(100% - 92px);
+                        min-height: 352px;
                         margin: 0 46px;
                         list-style-type: circle;
                         
@@ -114,6 +164,24 @@
                             .point-field {
                                 width: 100%;
                                 position: relative;
+                            }
+
+                            button {
+                                position: relative;
+                                z-index: 10;
+                                background-color: transparent;
+                                border: none;
+                                font-family: 'Montserrat';
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 16px;
+                                line-height: 20px;
+                                /* identical to box height */
+
+                                letter-spacing: 0.03em;
+
+                                color: #A7A8A9;
+                                cursor: pointer;
                             }
                         }
         
@@ -143,7 +211,32 @@
                     }
                 }
             }
+
+            .cotacao_form {
+                display: flex;
+                margin: 46px;
+
+                .nome, .sobrenome, .telephone, .company {
+                    width: calc(50% - 1rem)!important;
+                }
+                .email, .delivery, .message {
+                    width: 100%!important;
+                }
+
+                ::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+                    font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px !important;
+                line-height: 17px;
+                letter-spacing: 0.03em;
+                
+                color: rgba(167, 168, 169, 0.45);
+                }
+            }
         }
+
+
         
         .view-map {
             position: relative;

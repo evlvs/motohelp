@@ -1,0 +1,17 @@
+.video-player {
+    position: relative;
+    margin-top: -72px;
+    padding-left: 5vw;
+
+    padding-bottom: 72px;
+    background-color: var(--red);
+
+    .video-container {
+        width: 100%;
+        video {
+            width: 100%;
+            max-height: 512px;
+            object-fit: cover;
+        }
+    }
+}

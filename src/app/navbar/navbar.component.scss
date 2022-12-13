@@ -18,6 +18,11 @@
     width: 40%;
 
     li {
+        .navbar-button {
+            border-radius: 15px;
+            padding: 1rem 2rem;
+        }
+
         a {
             font-size: 1rem;
             text-decoration: none;

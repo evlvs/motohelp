@@ -22,7 +22,12 @@ import { ServicesComponent } from './services/services.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-
+import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
+import { VideoPlayerComponent } from './video-player/video-player.component';
+import { AdvantagesComponent } from './advantages/advantages.component';
+import {MatCardModule} from '@angular/material/card';
+import { PartnersComponent } from './partners/partners.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,10 @@ import {MatNativeDateModule} from '@angular/material/core';
     MapComponent,
     NavbarComponent,
     HeaderComponent,
-    ServicesComponent
+    ServicesComponent,
+    VideoPlayerComponent,
+    AdvantagesComponent,
+    PartnersComponent
   ],
   imports: [
     BrowserModule,
@@ -46,11 +54,14 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatProgressSpinnerModule,
     MatAutocompleteModule,
     MatInputModule,
+    MatSelectModule,
     MatToolbarModule,
     MatButtonModule,
     FontAwesomeModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -52,3 +52,32 @@ letter-spacing: 0.03em;
 ::ng-deep .mat-mdc-raised-button:not(:disabled) {
     background-color: var(--red)!important;
 }
+
+::ng-deep .mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle, .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {
+    stroke: var(--red, transparent) !important;
+}
+
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading {
+    border-color: rgba(217, 57, 56, 0.25)!important;
+}
+
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__leading {
+    border-color: rgba(217, 57, 56, 1)!important;
+}
+
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch {
+    border-color: rgba(217, 57, 56, 0.25)!important;
+}
+
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__notch {
+    border-color: rgba(217, 57, 56, 1)!important;
+}
+
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+    border-color: rgba(217, 57, 56, 0.25)!important;
+}
+
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__trailing {
+    border-color: rgba(217, 57, 56, 1)!important;
+}
+

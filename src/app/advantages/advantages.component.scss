@@ -1,0 +1,88 @@
+.advantages {
+    position: relative;
+    top: -78px;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 83%, rgba(217,57,56,1) 83%);
+    padding: 2rem 5vw;
+    
+    .advantages-content {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        
+        h1 {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 39px;
+            letter-spacing: 0.03em;
+            color: var(--gray);
+            display: block;
+            width: 100%;
+        }
+
+        .advantage-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-height: 530px;
+            width: 70%;
+
+            .advantage-body {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+                width: calc(50% - 2rem);
+                margin: 1rem;
+                padding: 1rem;
+
+                .service-text{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+
+                    h3{
+                        width: calc(100% - 30px);
+                        font-family: 'Montserrat';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 22px;
+                        letter-spacing: 0.03em;
+                        color: #1E1E1E;
+                    }
+
+                    button {
+                        background-color: transparent;
+                        border: none;
+                        cursor: pointer;
+                    }
+
+                    p {
+                        font-family: 'Montserrat';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 17px;
+                        letter-spacing: 0.03em;
+                    }
+
+                    .service-body {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+
+                .service-title {
+                    display: flex;
+                    padding: 0 .5rem;
+                    align-items: center;
+                    justify-content: flex-start;
+                }                
+            }
+        }
+    }
+}

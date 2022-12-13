@@ -2,7 +2,7 @@
     <div class="divider"></div>
     <div class="budget">
         
-      <mat-stepper class="budget-form"  #stepper>
+      <mat-stepper class="budget-form" #stepper *ngIf="!sendLoading">
         <mat-step [stepControl]="service.rotaFormGroup">
           <form [formGroup]="service.rotaFormGroup">
             <ng-template matStepLabel>Rota</ng-template>
@@ -10,7 +10,7 @@
             <div class="rota">
               <mat-form-field appearance="fill" class="date-field">
                 <mat-label>Selecione a data estimada</mat-label>
-                <input matInput [matDatepicker]="picker">
+                <input matInput [matDatepicker]="picker" formControlName="dataCotacao">
                 <mat-datepicker-toggle matIconPrefix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
@@ -41,7 +41,7 @@
             </pre>
             <div class="footer-stepper end">
               
-              <button mat-button matStepperNext class="primary-btn" [disabled]="!service.rotaFormGroup.valid" (click)="confirmRoute(service.rotaFormGroup)">Continuar</button>
+              <button mat-button matStepperNext class="primary-btn" [disabled]="!service.rotaFormGroup.valid"  (click)="confirmRoute(service.rotaFormGroup)">Calcular Rotas</button>
             </div>
           </form>
         </mat-step>
@@ -55,26 +55,94 @@
               </div>
               <div class="od_forms">
                 <h4>{{service.rotaFormGroup.controls['origem'].value}}</h4>
+                <div *ngFor="let item of service.rotaFormGroup.controls['points'].value">
+                  <h4>{{ isObject(item) }}</h4>
+                </div>
+                
                 <h4>{{service.rotaFormGroup.controls['destino'].value}}</h4>
               </div>
             </div>
             <div class="footer-stepper">
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
+              <button mat-button matStepperPrevious>Voltar</button>
+              <button mat-button matStepperNext class="primary-btn" [disabled]="!service.custoFormGroup.valid" >Continuar</button>
             </div>
           </form>
         </mat-step>
         <mat-step>
           <ng-template matStepLabel>Solicitar cotação</ng-template>
-          <p>You are now done.</p>
+          <form [formGroup]="service.cotacaoFormGroup" class="cotacao_form">
+            <div class="row">
+              <mat-form-field appearance="outline" class="cotacao nome">
+                <mat-label>Nome</mat-label>
+                <input matInput formControlName="nome">
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="cotacao sobrenome">
+                <mat-label>Sobrenome</mat-label>
+                <input matInput formControlName="sobrenome">
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="outline" class="cotacao email">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email">
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+              <mat-form-field appearance="outline" class="cotacao telephone">
+                <mat-label>Telefone de contato</mat-label>
+                <input matInput type="tel" formControlName="telephone">
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="cotacao company">
+                <mat-label>Empresa</mat-label>
+                <input matInput type="text" formControlName="company">
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+              <mat-form-field appearance="outline" class="cotacao delivery">
+                <mat-label>Qual tipo de entrega deseja fazer?</mat-label>
+                <mat-select formControlName="delivery">
+                  <mat-option value="Entrega de produtos">Entrega de produtos</mat-option>
+                  <mat-option value="Entrega de documentos">Entrega de documentos</mat-option>
+                  <mat-option value="Entrega de comidas">Entrega de comidas</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+              <mat-form-field appearance="outline" class="cotacao message">
+                <mat-label>Deixe uma mensagem</mat-label>
+                <textarea matInput
+                           formControlName="message"
+                          cdkTextareaAutosize
+                          #autosize="cdkTextareaAutosize"
+                          cdkAutosizeMinRows="1"
+                          cdkAutosizeMaxRows="5"></textarea>
+              </mat-form-field>
+            </div>
+          
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
+            <button mat-button matStepperPrevious>Voltar</button>
+            <button mat-button (click)="sendMessage()" [disabled]="!service.cotacaoFormGroup.valid">Enviar</button>
           </div>
+          </form>
         </mat-step>
       </mat-stepper>
+      <div class="send-message" *ngIf="sendLoading">
+        <div class="loading" *ngIf="sendLoading && notSendedMessage">
+          <mat-spinner></mat-spinner>
+          <p>Estamos enviando seus dados para um de nossos funcionários... Por favor aguarde...</p>
+        </div>
+        <div class="sended-message" *ngIf="sendLoading && !notSendedMessage">
+          <h1>Cotação enviada!</h1>
+          
+          <mat-icon aria-hidden="false" aria-label="Check icon" fontIcon="check" class="icon"></mat-icon>
+
+        </div>
+      </div>
       <div class="view-map">
-        <app-map></app-map>
+        <app-map [route]="route" (enviaForm)="onPopulaCustoForm($event)"></app-map>
       </div>
     </div>
   </section>

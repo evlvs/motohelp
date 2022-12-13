@@ -1,6 +1,6 @@
 .od_input {
     margin: 0 46px;
-    width: 90%;
+    width: 95%;
     position: relative;
 }
 
@@ -8,4 +8,13 @@
 
     padding-top: 24px;
     padding-bottom: 8px;
+}
+
+// .mat-progress-spinner circle, .mat-spinner circle {
+//     stroke: #3fb53f;
+//     }
+
+
+::ng-deep .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {
+    stroke: var(--red, transparent) !important;
 }

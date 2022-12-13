@@ -17,6 +17,9 @@ export class PointFieldComponent {
   timeType!: any; 
   point: Address[] = [];
   @Output() pointOut = new EventEmitter();
+  loading = false;
+  isValid = false;
+  isInvalid = false;
 
   constructor(public budgetService: BudgetService) {
 
@@ -24,6 +27,11 @@ export class PointFieldComponent {
 
   getPoint(event: any) {
     let address = (event.target as HTMLInputElement).value;
+    this.loading = true;
+    this.isValid = false;
+    this.isInvalid = false;
+    this.budgetService.isValid = false;
+
     if(address !== '') {
       clearTimeout(this.timeType)
       this.timeType = setTimeout(() => {
@@ -32,7 +40,6 @@ export class PointFieldComponent {
       if(event.keyCode === 8) {
         clearTimeout(this.timeType)
         this.point = [];
-        console.log(address)
       }
     }
   }
@@ -49,22 +56,16 @@ export class PointFieldComponent {
             lat: address.geometry.location.lat,
             lng: address.geometry.location.lng
           })
-          console.log(this.point)
         })
-        // obj.map((address: any) => {
-        //   this.point.push({
-        //     id: address.place_id,
-        //     address: address.display_name,
-        //     lat: address.lat,
-        //     lng: address.lon
-        //   })
-        //   console.log(this.point)
-        // })
+        
   
         this.filteredOptions = this.budgetService.rotaFormGroup.controls['origem'].valueChanges.pipe(
           startWith(''),
           map((value: any) => this._filter(value || '')),
         );
+      } else {
+        this.isInvalid = true;
+        this.loading = false;
       }
     })
 
@@ -77,6 +78,10 @@ export class PointFieldComponent {
   }
 
   sendPoint(address: Address) {
+    this.loading = false
+    this.isValid = true;
+    this.budgetService.isValid = true;
+
     this.pointOut.emit(address);
   }
 }

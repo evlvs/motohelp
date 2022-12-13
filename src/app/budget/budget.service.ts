@@ -10,13 +10,26 @@ const httpOptions = environment.HTTPOPT;
   providedIn: 'root'
 })
 export class BudgetService {
+  isValid = false;
   rotaFormGroup = this._formBuilder.group({
+    dataCotacao: [''],
     origem: ['', Validators.required],
     points: this._formBuilder.array([]),
     destino: ['', Validators.required],
   });
   custoFormGroup = this._formBuilder.group({
-    dataInicioVigencia: ['', Validators.required],
+    distance: ['', Validators.required],
+    time: ['', Validators.required],
+    price: ['', Validators.required]
+  });
+  cotacaoFormGroup = this._formBuilder.group({
+    nome: ['', Validators.required],
+    sobrenome: ['', Validators.required],
+    email: ['', Validators.required],
+    telephone: ['', Validators.required],
+    company: [''],
+    delivery: ['', Validators.required],
+    message: ['']
   });
 
   constructor(private _formBuilder: FormBuilder, private http: HttpClient) { }

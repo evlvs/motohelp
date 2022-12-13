@@ -11,5 +11,30 @@
 <div class="map-container">
     <div class="map-frame">
       <div id="map"></div>
+      <div class="map-info" *ngIf="distance && time">
+        <div class="map-info-header">
+          <div class="moto">
+            <img src="./assets/moto-black.svg" alt="icone moto">
+          </div>
+          <div class="map-info-title">
+            <h4>Duração da entrega</h4>
+            <span>{{time}} minutos</span>
+          </div>
+        </div>
+        <div class="map-info-body">
+          <div class="map-distance">
+            <h4>Distância</h4>
+            <span>
+              {{distance.toFixed(2)}} Km
+            </span>
+          </div>
+          <div class="map-price">
+            <h4>Preço</h4>
+            <span>
+              R$ {{price.toFixed(2)}}
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
