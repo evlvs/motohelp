@@ -2,7 +2,7 @@
     <div class="divider"></div>
     <div class="budget">
         
-      <mat-stepper class="budget-form" #stepper *ngIf="!sendLoading">
+      <mat-stepper class="budget-form" #stepper *ngIf="!sendLoading" [linear]="true">
         <mat-step [stepControl]="service.rotaFormGroup">
           <form [formGroup]="service.rotaFormGroup">
             <ng-template matStepLabel>Rota</ng-template>
@@ -53,14 +53,20 @@
                 <span class="circle active"></span>
                 <span class="circle" [ngClass]="secondCircle ? 'active' : ''"></span>
               </div>
-              <div class="od_forms">
-                <h4>{{service.rotaFormGroup.controls['origem'].value}}</h4>
-                <div *ngFor="let item of service.rotaFormGroup.controls['points'].value">
-                  <h4>{{ isObject(item) }}</h4>
-                </div>
-                
-                <h4>{{service.rotaFormGroup.controls['destino'].value}}</h4>
-              </div>
+              <ul class="od_forms">
+                <li>
+                  <h4>{{service.rotaFormGroup.controls['origem'].value}}</h4>
+                </li>
+                <li *ngIf="service.rotaFormGroup.controls['points'].value.length >= 1">
+                  <pre>{{service.rotaFormGroup.controls['points'].value | json}}</pre>
+                  <div *ngFor="let item of service.rotaFormGroup.controls['points'].value">
+                    <h4>{{ isObject(item) }}</h4>
+                  </div>
+                </li>
+                <li>
+                  <h4>{{service.rotaFormGroup.controls['destino'].value}}</h4>
+                </li>
+              </ul>
             </div>
             <div class="footer-stepper">
               <button mat-button matStepperPrevious>Voltar</button>

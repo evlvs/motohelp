@@ -47,3 +47,33 @@ section {
         }
     }
 }
+
+@media (max-width: 868px) {
+    section {
+        flex-direction: column;
+        height: auto;
+        padding: 0 5vw;
+        align-items: center;
+        
+        article {
+            margin-top: 60px;
+            height: auto;
+
+            h1 {
+                font-size: 32px;
+                line-height: 36px;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+
+        picture {
+            img {
+                max-height: 300px;
+            }
+        }
+    }
+}

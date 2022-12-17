@@ -23,9 +23,10 @@
                 <div class="service-text">
                     <h3>Terceirização de mão de obra</h3>
                     <button type="button" (click)="maoObra = !maoObra">
-                        <mat-icon matSuffix>add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="!maoObra">add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="maoObra">do_not_disturb_on</mat-icon>
                     </button>
-                    <p *ngIf="maoObra" class="service-body">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p [ngClass]="!maoObra ? 'service-body hidden' : 'service-body'">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
                 </div>
             </mat-card>
 
@@ -48,9 +49,10 @@
                     <h3>Contrato de prestação
                         de serviços</h3>
 <button type="button" (click)="contrato = !contrato">
-                        <mat-icon matSuffix>add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="!contrato">add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="contrato">do_not_disturb_on</mat-icon>
                     </button>
-                    <p *ngIf="contrato">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p [ngClass]="!contrato ? 'service-body hidden' : 'service-body'">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
                 </div>
             </mat-card>
 
@@ -71,9 +73,10 @@
                 <div class="service-text">
                     <h3>Otimização do tempo de entrega</h3>
 <button type="button" (click)="tempoEntrega = !tempoEntrega">
-                        <mat-icon matSuffix>add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="!tempoEntrega">add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="tempoEntrega">do_not_disturb_on</mat-icon>
                     </button>
-                    <p *ngIf="tempoEntrega">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p [ngClass]="!tempoEntrega ? 'service-body hidden' : 'service-body'">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
                 </div>
             </mat-card>
 
@@ -93,9 +96,10 @@
                     <h3>Suporte a disposição
                         sempre que necessário</h3>
                     <button type="button" (click)="suporte = !suporte">
-                        <mat-icon matSuffix>add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="!suporte">add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="suporte">do_not_disturb_on</mat-icon>
                     </button>
-                    <p *ngIf="suporte">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p [ngClass]="!suporte ? 'service-body hidden' : 'service-body'">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
                 </div>
             </mat-card>
 
@@ -118,9 +122,10 @@
                         para um bom atendimento
                         ao cliente</h3>
                     <button type="button" (click)="treinamento = !treinamento">
-                        <mat-icon matSuffix>add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="!treinamento">add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="treinamento">do_not_disturb_on</mat-icon>
                     </button>
-                    <p *ngIf="treinamento">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p [ngClass]="!treinamento ? 'service-body hidden' : 'service-body'">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
                 </div>
             </mat-card>
 
@@ -140,9 +145,10 @@
                     <h3>Profissionais
                         uniformizados</h3>
                     <button type="button" (click)="uniformes = !uniformes">
-                        <mat-icon matSuffix>add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="!uniformes">add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="uniformes">do_not_disturb_on</mat-icon>
                     </button>
-                    <p *ngIf="uniformes">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p [ngClass]="!uniformes ? 'service-body hidden' : 'service-body'">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
                 </div>
             </mat-card>
 
@@ -165,9 +171,10 @@
                         adequado para sua
                         operação</h3>
                     <button type="button" (click)="equipamento = !equipamento">
-                        <mat-icon matSuffix>add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="!equipamento">add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="equipamento">do_not_disturb_on</mat-icon>
                     </button>
-                    <p *ngIf="equipamento">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p [ngClass]="!equipamento ? 'service-body hidden' : 'service-body'">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
                 </div>
             </mat-card>
 
@@ -184,14 +191,15 @@
                     <h3>Relatório de entregas
                         por área de atuação</h3>
                     <button type="button" (click)="relatorio = !relatorio">
-                        <mat-icon matSuffix>add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="!relatorio">add_circle_outline</mat-icon>
+                        <mat-icon matSuffix *ngIf="relatorio">do_not_disturb_on</mat-icon>
                     </button>
-                    <p *ngIf="relatorio">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p [ngClass]="!relatorio ? 'service-body hidden' : 'service-body'">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
                 </div>
             </mat-card>
 
         </div>
-        <img src="/assets/advantages.png" alt="imagem motohelp">
+        <img src="/assets/advantages.jpg" alt="imagem motohelp">
 
     </div>
 </div>

@@ -1,4 +1,7 @@
 <mat-toolbar class="motohelp-nav">
+  <button mat-icon-button class="menu-button" aria-label="Example icon-button with menu icon" (click)="mobileMenu = !mobileMenu">
+    <mat-icon>menu</mat-icon>
+  </button>
     <ul class="motohelp-menu">
       <li><a href="#">Institucional</a></li>
       <li><a href="#">Serviços</a></li>
@@ -13,3 +16,13 @@
       <li><button mat-raised-button color="primary" class="navbar-button">Cotação On-line</button></li>
     </ul>
 </mat-toolbar>
+<nav [ngClass]="!mobileMenu ? 'mobile-menu' : 'mobile-menu active'">
+  <ul class="motohelp-menu">
+    <li><a href="#">Institucional</a></li>
+    <li><a href="#">Serviços</a></li>
+    <li><a href="#">Vantagem</a></li>
+    <li><a href="#">Parceiros</a></li>
+    <li><a href="#">Fale conosco</a></li>
+    <li><button mat-raised-button color="primary" class="navbar-button">Cotação On-line</button></li>
+  </ul>
+</nav>
