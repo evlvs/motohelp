@@ -9,7 +9,7 @@
            
             <div class="rota">
               <mat-form-field appearance="fill" class="date-field">
-                <mat-label>Selecione a data estimada</mat-label>
+                <mat-label class="label-data">Selecione a data estimada</mat-label>
                 <input matInput [matDatepicker]="picker" formControlName="dataCotacao">
                 <mat-datepicker-toggle matIconPrefix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
@@ -21,14 +21,14 @@
                     (pointOut)="onOrigin($event)" class="point-field"></app-point-field>
                 </li>
                
+                
+                <li>
+                  <app-point-field fieldName="Destino" (pointOut)="onDestiny($event)" class="point-field"></app-point-field>
+                </li>
                 <li formArrayName="points" *ngFor="let point of points.controls; index as i">
                   <app-point-field fieldName="Ponto" (pointOut)="onPoint($event, i)" class="point-field"></app-point-field>
 
                   <button class="btn-remove" type="button" (click)="removePoint(i)">x</button>
-                </li>
-                <li>
-                  <app-point-field fieldName="Destino" (pointOut)="onDestiny($event)" class="point-field"></app-point-field>
-
                 </li>
                 
               </ul>
@@ -47,7 +47,7 @@
         </mat-step>
         <mat-step [stepControl]="service.custoFormGroup">
           <form [formGroup]="service.custoFormGroup">
-            <ng-template matStepLabel>Custos</ng-template>
+            <ng-template matStepLabel>Cotação</ng-template>
             <div class="rota">
               <div class="marker-slider">
                 <span class="circle active"></span>
@@ -57,14 +57,16 @@
                 <li>
                   <h4>{{service.rotaFormGroup.controls['origem'].value}}</h4>
                 </li>
+                
+                <li>
+                  <h4>{{service.rotaFormGroup.controls['destino'].value}}</h4>
+                </li>
+
                 <li *ngIf="service.rotaFormGroup.controls['points'].value.length >= 1">
-                  <pre>{{service.rotaFormGroup.controls['points'].value | json}}</pre>
+                  <!-- <pre>{{service.rotaFormGroup.controls['points'].value | json}}</pre> -->
                   <div *ngFor="let item of service.rotaFormGroup.controls['points'].value">
                     <h4>{{ isObject(item) }}</h4>
                   </div>
-                </li>
-                <li>
-                  <h4>{{service.rotaFormGroup.controls['destino'].value}}</h4>
                 </li>
               </ul>
             </div>
@@ -75,7 +77,7 @@
           </form>
         </mat-step>
         <mat-step>
-          <ng-template matStepLabel>Solicitar cotação</ng-template>
+          <ng-template matStepLabel>Solicitar motoboy</ng-template>
           <form [formGroup]="service.cotacaoFormGroup" class="cotacao_form">
             <div class="row">
               <mat-form-field appearance="outline" class="cotacao nome">

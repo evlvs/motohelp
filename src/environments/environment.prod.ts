@@ -2,7 +2,7 @@ import { HttpHeaders } from "@angular/common/http";
 
 export const environment = {
   production: true,
-  API_KEY: 'AIzaSyBBmTPg4czYtBAAUTPSh27ENatp9DcK3EA',
+  API_KEY: 'AIzaSyAfK5g3nTP-od0ep3iSIIDP8gG5Rb2mDQ4',
   HTTPOPT: {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',

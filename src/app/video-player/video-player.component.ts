@@ -11,10 +11,22 @@ export class VideoPlayerComponent {
   playPause(event: any) {
     const vid = this.video.nativeElement as HTMLVideoElement;
 
-    if(vid.paused) {
-      vid.play()
+    if(window.screen.width < 738) {
+
+      if(vid.paused) {
+        vid.requestFullscreen()
+        vid.play()
+      } else {
+        vid.pause()
+      }
+
     } else {
-      vid.pause()
+      if(vid.paused) {
+        vid.play()
+      } else {
+        vid.pause()
+      }
     }
+    
   }
 }

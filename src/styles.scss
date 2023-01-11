@@ -52,12 +52,13 @@ html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    scroll-behavior: smooth;
 }
 
 html, body {
     height: 100%;
     overflow: visible;
-    overflow-x: hidden;
+    // overflow-x: hidden;
 }
 
 body {
@@ -68,6 +69,21 @@ body {
     color: #212529;
     text-align: left;
 }
+
+// body::-webkit-scrollbar {
+//     width: 8px;               /* width of the entire scrollbar */
+//     z-index: 101;
+//   }
+  
+//   body::-webkit-scrollbar-track {
+//     background: #fff;        /* color of the tracking area */
+//   }
+  
+//   body::-webkit-scrollbar-thumb {
+//     background-color: var(--red);    /* color of the scroll thumb */
+//     border-radius: 20px;       /* roundness of the scroll thumb */
+//     border: 2px solid #fff;  /* creates padding around scroll thumb */
+//   }
 
 h1 {
     font-size: 3rem;

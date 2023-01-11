@@ -3,6 +3,7 @@ import { ThemePalette } from '@angular/material/core';
 import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 import * as L from 'leaflet';
 import 'leaflet-routing-machine';
+import { BudgetService } from 'src/app/budget/budget.service';
 // require("lrm-google");
 // import 'lrm-google';
 // import 'lrm-google';
@@ -33,6 +34,11 @@ export class MapComponent implements AfterViewInit, OnChanges {
   time!: number;
   price!: number;
   @Output() enviaForm =  new EventEmitter();
+
+  constructor(public service: BudgetService) {
+    // this.service.rotaFormGroup.controls['origem'].setErrors({'incorrect': true});
+
+  }
 
   async ngOnChanges(changes: SimpleChanges) {
     let waypoints: L.LatLng[] = [];
@@ -85,13 +91,16 @@ export class MapComponent implements AfterViewInit, OnChanges {
         routeControl.on('routesfound', (e) => {
           var routes = e.routes;
           var summary = routes[0].summary;
+          console.log(routes[0])
           this.distance = summary.totalDistance / 1000;
           this.time = Math.round(summary.totalTime % 3600 / 60);
           console.log(waypoints.length)
           if(this.distance <= 8) {
             this.price = 25 + ((waypoints.length - 2) * 5)
+            this.price = Math.round(this.price)
           } else {
-            this.price = 25 + ((this.distance - 8) * 3) + ((waypoints.length - 2) * 5)
+            this.price = (25 + ((this.distance - 8) * 3) + ((waypoints.length - 2) * 5))
+            this.price = Math.round(this.price)
           }
           // alert('Total distance is ' + summary.totalDistance / 1000 + ' km and total time is ' + Math.round(summary.totalTime % 3600 / 60) + ' minutes');
           this.enviaForm.emit({
@@ -134,14 +143,18 @@ export class MapComponent implements AfterViewInit, OnChanges {
   }
 
   getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position: GeolocationPosition) => {
-        this.initialLat = position.coords.latitude
-        this.initialLng = position.coords.longitude
-      })
-    } else {
-      console.log("Geolocation is not supported by this browser.");
-    }
+    // if (navigator.geolocation) {
+    //   navigator.geolocation.getCurrentPosition((position: GeolocationPosition) => {
+    //     this.initialLat = position.coords.latitude
+    //     this.initialLng = position.coords.longitude
+    //   })
+    // } else {
+    //   console.log("Geolocation is not supported by this browser.");
+    // }
+    this.initialLat = -22.9187318;
+    this.initialLng = -43.2184567
+    this.marker = L.marker([this.initialLat, this.initialLng])
+
   }
 
   getDistance(e: any) {

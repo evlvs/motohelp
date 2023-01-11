@@ -14,8 +14,8 @@ export class BudgetService {
   rotaFormGroup = this._formBuilder.group({
     dataCotacao: [''],
     origem: ['', Validators.required],
-    points: this._formBuilder.array([]),
     destino: ['', Validators.required],
+    points: this._formBuilder.array([]),
   });
   custoFormGroup = this._formBuilder.group({
     distance: ['', Validators.required],

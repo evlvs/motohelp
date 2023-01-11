@@ -83,6 +83,12 @@ footer {
 
 @media (max-width: 738px) {
     footer {
+        .cotation-button {
+
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
         nav {
             margin-bottom: 0;
             
@@ -91,6 +97,10 @@ footer {
                 justify-content: center;
                 align-items: center;
             }
+        }
+
+        .footer-list {
+            flex-direction: column;
         }
     }
 }

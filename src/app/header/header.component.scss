@@ -13,6 +13,7 @@ section {
     -o-background-size: cover;
     background-size: cover;
     color: #fff;
+    overflow: hidden;
 
     article {
         max-width: 450px;
@@ -46,6 +47,10 @@ section {
             padding: 1rem 3rem;
         }
     }
+
+    picture {
+        max-height: 579px;
+    }
 }
 
 @media (max-width: 868px) {
@@ -54,9 +59,9 @@ section {
         height: auto;
         padding: 0 5vw;
         align-items: center;
-        
+
         article {
-            margin-top: 60px;
+            margin-top: 80px;
             height: auto;
 
             h1 {
@@ -68,9 +73,14 @@ section {
                 font-size: 14px;
                 line-height: 20px;
             }
+
+            .header-button {
+                margin: 1rem 0;
+            }
         }
 
         picture {
+            max-height: 300px;
             img {
                 max-height: 300px;
             }

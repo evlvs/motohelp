@@ -3,16 +3,16 @@
     <mat-icon>menu</mat-icon>
   </button>
     <ul class="motohelp-menu">
-      <li><a href="#">Institucional</a></li>
-      <li><a href="#">Serviços</a></li>
-      <li><a href="#">Vantagem</a></li>
+      <li><button (click)="scrollToElement('home')">Institucional</button></li>
+      <li><button (click)="scrollToElement('servicos')">Serviços</button></li>
+      <li><button (click)="scrollToElement('vantagens')">Vantagem</button></li>
     </ul>
     <a routerLink="/" class="motohelp-logo">
       <img src="/assets/motohelp-logo.svg" alt="Motohelp Logo">
     </a>
     <ul class="motohelp-menu">
-      <li><a href="#">Parceiros</a></li>
-      <li><a href="#">Fale conosco</a></li>
+      <li><button (click)="scrollToElement('parceiros')">Parceiros</button></li>
+      <li><button (click)="scrollToElement('footer')">Fale conosco</button></li>
       <li><button mat-raised-button color="primary" class="navbar-button">Cotação On-line</button></li>
     </ul>
 </mat-toolbar>

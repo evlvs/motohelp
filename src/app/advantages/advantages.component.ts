@@ -14,4 +14,13 @@ export class AdvantagesComponent {
   uniformes = false;
   equipamento = false;
   relatorio = false;
+
+  maoObraTexto: string = "Nessa modalidade nossos profissionais atuam exclusivamente para a empresa contratante com total responsabilidade da MOTO HELP.";
+  contratoTexto: string = "";
+  tempoEntregaTexto: string = "";
+  suporteTexto: string = "";
+  treinamentoTexto: string = "";
+  uniformesTexto: string = "";
+  equipamentoTexto: string = "";
+  relatorioTexto: string = "";
 }

@@ -119,6 +119,8 @@
                         color: #A7A8A9;
                         text-align: left;
                         margin: 0 46px;
+                        height: 56px;
+                        padding-left: 60px;
                     }
 
                     .date-field {
@@ -142,7 +144,7 @@
                         min-height: 352px;
                         margin: 0 46px;
                         list-style-type: circle;
-                        
+                        justify-content: space-evenly;
                         
 
                         li {
@@ -271,8 +273,31 @@
 
                     .rota {
                         height: auto;
+                        .add-point {
+                            padding-left: 0;
+                            margin-left: 1rem;
+                        }
+    
+                        .date-field {
+                            margin: 0;
+                            margin-top: 1rem;                            
+                        }
+
                         .od_forms {
                             min-height: auto;
+                            margin: 0 1rem;
+                        }
+                    }
+                }
+
+                .cotacao_form {
+                    gap: .5rem;
+
+                    .row {
+                        flex-wrap: wrap;
+                        
+                        .nome, .sobrenome, .telephone, .company {
+                            width: 100%!important;
                         }
                     }
                 }

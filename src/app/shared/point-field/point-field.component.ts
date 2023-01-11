@@ -49,6 +49,7 @@ export class PointFieldComponent {
       clearTimeout(this.timeType);
     }
     (await this.budgetService.getLatLng(address)).subscribe((obj: any) => {
+      console.log(obj.error_message)
       if(obj.status === 'OK') {
         obj.results.map((address: any) => {
           this.point.push({

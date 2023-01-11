@@ -1,4 +1,4 @@
-<section class="services">
+<section class="services" id="servicos">
     <ul class="time-line">
         <li (mouseover)="timeLineActivated = 'agilidade'">
             <img src="/assets/moto.svg" alt="Motohelp Logo" [ngClass]="timeLineActivated === 'agilidade' ? '' : 'hidden'"/>
@@ -6,7 +6,7 @@
                 <span class="circle"></span>
             </div>
             <h4>Agilidade</h4>
-            <p [ngClass]="timeLineActivated === 'agilidade' ? '' : 'hidden'">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+            <p [ngClass]="timeLineActivated === 'agilidade' ? '' : 'hidden'">{{agilidade}}</p>
         </li>
         <li (mouseover)="timeLineActivated = 'seguranca'">
             <img src="/assets/moto.svg" alt="Motohelp Logo" [ngClass]="timeLineActivated === 'seguranca' ? '' : 'hidden'"/>
@@ -14,7 +14,7 @@
                 <span class="circle"></span>
             </div>
             <h4>Segurança</h4>
-            <p [ngClass]="timeLineActivated === 'seguranca' ? '' : 'hidden'">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+            <p [ngClass]="timeLineActivated === 'seguranca' ? '' : 'hidden'">{{seguranca}}</p>
         </li>
         <li (mouseover)="timeLineActivated = 'qualidade'">
             <img src="/assets/moto.svg" alt="Motohelp Logo" [ngClass]="timeLineActivated === 'qualidade' ? '' : 'hidden'"/>
@@ -22,39 +22,39 @@
                 <span class="circle"></span>
             </div>
             <h4>Qualidade</h4>
-            <p [ngClass]="timeLineActivated === 'qualidade' ? '' : 'hidden'">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+            <p [ngClass]="timeLineActivated === 'qualidade' ? '' : 'hidden'">{{qualidade}}</p>
         </li>
-        <li (mouseover)="timeLineActivated = 'transparencia'">
+        <!-- <li (mouseover)="timeLineActivated = 'transparencia'">
             <img src="/assets/moto.svg" alt="Motohelp Logo" [ngClass]="timeLineActivated === 'transparencia' ? '' : 'hidden'"/>
             <div class="line" [ngClass]="timeLineActivated === 'transparencia' ? 'hidden' : ''">
                 <span class="circle"></span>
             </div>
             <h4>Transparência</h4>
-            <p [ngClass]="timeLineActivated === 'transparencia' ? '' : 'hidden'">Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
-        </li>
+            <p [ngClass]="timeLineActivated === 'transparencia' ? '' : 'hidden'">{{transparencia}}</p>
+        </li> -->
     </ul>
     <h2>Serviços</h2>
     <ul class="time-line-mobile">
         <li>
             <h4>Agilidade</h4>
-            <p>Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+            <p>{{agilidade}}</p>
         </li>
         <li>
             <h4>Segurança</h4>
-            <p>Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+            <p>{{seguranca}}</p>
         </li>
         <li>
             <h4>Qualidade</h4>
-            <p>Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+            <p>{{qualidade}}</p>
         </li>
-        <li>
+        <!-- <li>
             <h4>Transparência</h4>
-            <p>Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
-        </li>
+            <p>{{transparencia}}</p>
+        </li> -->
     </ul>
     <ul class="services-list">
         <li>
-            <img src="/assets/motohelp-bg.png" alt="Restaurantes">
+            <img src="/assets/services-img/Rectangle21.png" alt="Restaurantes">
             <div class="service-body">
                 <span class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
@@ -67,12 +67,12 @@
                 </span>
                 <div class="service-text">
                     <h3>Restaurantes</h3>
-                    <p>Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p>{{restaurantes}}</p>
                 </div>
             </div>
         </li>
         <li>
-            <img src="/assets/motohelp-bg.png" alt="Distribuidoras">
+            <img src="/assets/services-img/Rectangle23.png" alt="Distribuidoras">
             <div class="service-body">
                 <span class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
@@ -94,12 +94,12 @@
                 </span>
                 <div class="service-text">
                     <h3>Distribuidoras</h3>
-                    <p>Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p>{{distribuidoras}}</p>
                 </div>
             </div>
         </li>
         <li>
-            <img src="/assets/motohelp-bg.png" alt="eCommercce">
+            <img src="/assets/services-img/Rectangle25.png" alt="eCommercce">
             <div class="service-body">
                 <span class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
@@ -119,12 +119,12 @@
                 </span>
                 <div class="service-text">
                     <h3>eCommercce</h3>
-                    <p>Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p>{{ecommerce}}</p>
                 </div>
             </div>
         </li>
         <li>
-            <img src="/assets/motohelp-bg.png" alt="Autopeças">
+            <img src="/assets/services-img/Rectangle27.png" alt="Autopeças">
             <div class="service-body">
                 <span class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="52" height="53" viewBox="0 0 52 53" fill="none">
@@ -137,12 +137,12 @@
                 </span>
                 <div class="service-text">
                     <h3>Autopeças</h3>
-                    <p>Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p>{{autopecas}}</p>
                 </div>
             </div>
         </li>
         <li>
-            <img src="/assets/motohelp-bg.png" alt="Farmácias">
+            <img src="/assets/services-img/Rectangle28.png" alt="Farmácias">
             <div class="service-body">
                 <span class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
@@ -152,12 +152,12 @@
                 </span>
                 <div class="service-text">
                     <h3>Farmácias</h3>
-                    <p>Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p>{{farmacias}}</p>
                 </div>
             </div>
         </li>
         <li>
-            <img src="/assets/motohelp-bg.png" alt="Entrega de documentos">
+            <img src="/assets/services-img/Rectangle29.png" alt="Entrega de documentos">
             <div class="service-body">
                 <span class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="53" height="52" viewBox="0 0 53 52" fill="none">
@@ -172,9 +172,13 @@
                 </span>
                 <div class="service-text">
                     <h3>Entrega de documentos</h3>
-                    <p>Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p>{{documentos}}</p>
                 </div>
             </div>
         </li>
     </ul>
+    <div class="arrows">
+        <mat-icon (click)="prev()">keyboard_arrow_left</mat-icon>
+        <mat-icon (click)="next()">keyboard_arrow_right</mat-icon>
+    </div>
 </section>

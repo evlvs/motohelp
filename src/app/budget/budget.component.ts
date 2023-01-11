@@ -47,6 +47,7 @@ export class BudgetComponent {
     if(this.points.value) {      
       this.service.rotaFormGroup.controls['points'].at(index).patchValue({point: event.address})
     }
+
     this.pointsLngLat = this.pointsLngLat+`${event.lng},${event.lat};`
   }
 
@@ -55,12 +56,15 @@ export class BudgetComponent {
     console.log(event)
     this.service.rotaFormGroup.patchValue({destino: event.address})
     this.pointsLngLatDestiny = "";
-    this.pointsLngLatDestiny = `${event.lng},${event.lat}`
+
+    this.pointsLngLatDestiny = `${event.lng},${event.lat};`
   }
 
   async confirmRoute(form: FormGroup) {
-    const rota = this.pointsLngLatOrigin+this.pointsLngLat+this.pointsLngLatDestiny;
-    (await this.service.getRoute(rota)).subscribe((obj: any) => {
+    const rota = this.pointsLngLatOrigin+this.pointsLngLatDestiny+this.pointsLngLat;
+    const rotaFinal = rota.substring(0, rota.length - 1);
+
+    (await this.service.getRoute(rotaFinal)).subscribe((obj: any) => {
       this.route = obj
       console.log(obj.routes)
     })

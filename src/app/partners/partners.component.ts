@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class PartnersComponent {
 
+  partners = [
+    {partnerName: "BAR DO ELIAS (Flamengo/Botafogo)", logo: ""},
+    {partnerName: "TACACÁ DO NORTE", logo: ""},
+    {partnerName: "BASTARDA", logo: ""},
+    {partnerName: "TEMAKERIA E CIA(Jardim Botânico/Barra)", logo: ""},
+    {partnerName: "Rão Burger(Botafogo)", logo: ""},
+    {partnerName: "The Box Sushi(Ipanema)", logo: ""},
+    {partnerName: "Pizzaria Universo", logo: ""},
+    {partnerName: "Forneria Vôrides", logo: ""},
+    {partnerName: "Casa da Feijoada", logo: ""},
+    {partnerName: "Colégio Pedro II", logo: ""}
+  ]
 }
