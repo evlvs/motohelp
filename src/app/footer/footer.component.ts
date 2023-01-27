@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  scrollToElement(element: string): void {
+    // $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    console.log(document.getElementById(element)?.scrollIntoView({behavior: "smooth"}))
+    document.getElementById(element)?.scrollIntoView({behavior: "smooth"});
+  }
 }

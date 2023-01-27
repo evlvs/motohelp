@@ -7,22 +7,22 @@
       <li><button (click)="scrollToElement('servicos')">Serviços</button></li>
       <li><button (click)="scrollToElement('vantagens')">Vantagem</button></li>
     </ul>
-    <a routerLink="/" class="motohelp-logo">
+    <a routerLink="/" class="motohelp-logo" (click)="scrollToElement('home')">
       <img src="/assets/motohelp-logo.svg" alt="Motohelp Logo">
     </a>
     <ul class="motohelp-menu">
       <li><button (click)="scrollToElement('parceiros')">Parceiros</button></li>
       <li><button (click)="scrollToElement('footer')">Fale conosco</button></li>
-      <li><button mat-raised-button color="primary" class="navbar-button">Cotação On-line</button></li>
+      <li><button mat-raised-button color="primary" class="navbar-button" (click)="scrollToElement('budget')">Help expresso</button></li>
     </ul>
 </mat-toolbar>
 <nav [ngClass]="!mobileMenu ? 'mobile-menu' : 'mobile-menu active'">
   <ul class="motohelp-menu">
-    <li><a href="#">Institucional</a></li>
-    <li><a href="#">Serviços</a></li>
-    <li><a href="#">Vantagem</a></li>
-    <li><a href="#">Parceiros</a></li>
-    <li><a href="#">Fale conosco</a></li>
-    <li><button mat-raised-button color="primary" class="navbar-button">Cotação On-line</button></li>
+    <li><button (click)="scrollToElement('home')">Institucional</button></li>
+    <li><button (click)="scrollToElement('servicos')">Serviços</button></li>
+    <li><button (click)="scrollToElement('vantagens')">Vantagem</button></li>
+    <li><button (click)="scrollToElement('parceiros')">Parceiros</button></li>
+    <li><button (click)="scrollToElement('footer')">Fale conosco</button></li>
+    <li><button mat-raised-button color="primary" class="navbar-button" (click)="scrollToElement('budget')">Help expresso</button></li>
   </ul>
 </nav>

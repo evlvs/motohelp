@@ -1,40 +1,43 @@
 <section class="services" id="servicos">
-    <ul class="time-line">
-        <li (mouseover)="timeLineActivated = 'agilidade'">
-            <img src="/assets/moto.svg" alt="Motohelp Logo" [ngClass]="timeLineActivated === 'agilidade' ? '' : 'hidden'"/>
-            <div class="line" [ngClass]="timeLineActivated === 'agilidade' ? 'hidden' : ''">
-                <span class="circle"></span>
-            </div>
-            <h4>Agilidade</h4>
-            <p [ngClass]="timeLineActivated === 'agilidade' ? '' : 'hidden'">{{agilidade}}</p>
-        </li>
-        <li (mouseover)="timeLineActivated = 'seguranca'">
-            <img src="/assets/moto.svg" alt="Motohelp Logo" [ngClass]="timeLineActivated === 'seguranca' ? '' : 'hidden'"/>
-            <div class="line" [ngClass]="timeLineActivated === 'seguranca' ? 'hidden' : ''">
-                <span class="circle"></span>
-            </div>
-            <h4>Segurança</h4>
-            <p [ngClass]="timeLineActivated === 'seguranca' ? '' : 'hidden'">{{seguranca}}</p>
-        </li>
-        <li (mouseover)="timeLineActivated = 'qualidade'">
-            <img src="/assets/moto.svg" alt="Motohelp Logo" [ngClass]="timeLineActivated === 'qualidade' ? '' : 'hidden'"/>
-            <div class="line" [ngClass]="timeLineActivated === 'qualidade' ? 'hidden' : ''">
-                <span class="circle"></span>
-            </div>
-            <h4>Qualidade</h4>
-            <p [ngClass]="timeLineActivated === 'qualidade' ? '' : 'hidden'">{{qualidade}}</p>
-        </li>
-        <!-- <li (mouseover)="timeLineActivated = 'transparencia'">
-            <img src="/assets/moto.svg" alt="Motohelp Logo" [ngClass]="timeLineActivated === 'transparencia' ? '' : 'hidden'"/>
-            <div class="line" [ngClass]="timeLineActivated === 'transparencia' ? 'hidden' : ''">
-                <span class="circle"></span>
-            </div>
-            <h4>Transparência</h4>
-            <p [ngClass]="timeLineActivated === 'transparencia' ? '' : 'hidden'">{{transparencia}}</p>
-        </li> -->
-    </ul>
+    <div class="timeline-box">
+        <ul class="time-line">
+            <li (mouseover)="timeLineActivated = 'agilidade'">
+                <img src="/assets/moto.svg" alt="Motohelp Logo" [ngClass]="timeLineActivated === 'agilidade' ? '' : 'hidden'"/>
+                <div class="line" [ngClass]="timeLineActivated === 'agilidade' ? 'hidden' : ''">
+                    <span class="circle"></span>
+                </div>
+                <h4>Agilidade</h4>
+                <p [ngClass]="timeLineActivated === 'agilidade' ? '' : 'hidden'">{{agilidade}}</p>
+            </li>
+            <li (mouseover)="timeLineActivated = 'seguranca'">
+                <img src="/assets/moto.svg" alt="Motohelp Logo" [ngClass]="timeLineActivated === 'seguranca' ? '' : 'hidden'"/>
+                <div class="line" [ngClass]="timeLineActivated === 'seguranca' ? 'hidden' : ''">
+                    <span class="circle"></span>
+                </div>
+                <h4>Segurança</h4>
+                <p [ngClass]="timeLineActivated === 'seguranca' ? '' : 'hidden'">{{seguranca}}</p>
+            </li>
+            <li (mouseover)="timeLineActivated = 'qualidade'">
+                <img src="/assets/moto.svg" alt="Motohelp Logo" [ngClass]="timeLineActivated === 'qualidade' ? '' : 'hidden'"/>
+                <div class="line" [ngClass]="timeLineActivated === 'qualidade' ? 'hidden' : ''">
+                    <span class="circle"></span>
+                </div>
+                <h4>Qualidade</h4>
+                <p [ngClass]="timeLineActivated === 'qualidade' ? '' : 'hidden'">{{qualidade}}</p>
+            </li>
+            <li (mouseover)="timeLineActivated = 'transparencia'">
+                <img src="/assets/moto.svg" alt="Motohelp Logo" [ngClass]="timeLineActivated === 'transparencia' ? '' : 'hidden'"/>
+                <div class="line" [ngClass]="timeLineActivated === 'transparencia' ? 'hidden' : ''">
+                    <span class="circle"></span>
+                </div>
+                <h4>Transparência</h4>
+                <p [ngClass]="timeLineActivated === 'transparencia' ? '' : 'hidden'">{{transparencia}}</p>
+            </li>
+        </ul>
+
+    </div>
     <h2>Serviços</h2>
-    <ul class="time-line-mobile">
+    <!-- <ul class="time-line-mobile">
         <li>
             <h4>Agilidade</h4>
             <p>{{agilidade}}</p>
@@ -47,138 +50,140 @@
             <h4>Qualidade</h4>
             <p>{{qualidade}}</p>
         </li>
-        <!-- <li>
+        <li>
             <h4>Transparência</h4>
             <p>{{transparencia}}</p>
-        </li> -->
-    </ul>
-    <ul class="services-list">
-        <li>
-            <img src="/assets/services-img/Rectangle21.png" alt="Restaurantes">
-            <div class="service-body">
-                <span class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
-                        <path d="M43.1479 39.8198L9.49482 7.14894C8.77608 6.45416 7.59414 6.74964 7.2747 7.69199C6.61186 9.59266 6.14069 12.8669 8.16914 16.9558C10.9802 22.6338 19.078 29.2223 21.362 31.0032C21.7374 31.2987 22.2325 31.3705 22.6797 31.1948L24.6124 30.4521C25.0835 30.2685 25.6186 30.3643 25.9939 30.6997L27.08 31.658C27.4075 31.9535 27.5752 32.3848 27.5273 32.824L27.3036 34.7247C27.2557 35.1559 27.4155 35.5792 27.7269 35.8747L38.2445 45.5936C38.8195 46.1287 39.7299 46.0568 40.217 45.4419L43.2757 41.6246C43.7069 41.0815 43.659 40.2989 43.1639 39.8118L43.1479 39.8198Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M15.1649 30.8195L6.68376 39.8037C5.58967 40.9617 5.59766 42.7905 6.70772 43.9405L6.81154 44.0443C7.95354 45.2262 9.83025 45.2422 10.9962 44.0842L20.6433 34.501" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M27.8307 19.9744L29.4439 18.1935C30.1227 17.4428 30.4981 16.4606 30.4981 15.4463V15.2547C30.4981 14.2165 30.8974 13.2102 31.6081 12.4516L39.0351 4.54541" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M30.9772 22.3223L32.7581 20.7091C33.5088 20.0303 34.4911 19.655 35.5053 19.655H35.697C36.7352 19.655 37.7414 19.2557 38.5001 18.5449L46.4062 11.1179" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M34.3394 15.7099L42.3733 7.84363" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                    </svg>
-                </span>
-                <div class="service-text">
-                    <h3>Restaurantes</h3>
-                    <p>{{restaurantes}}</p>
-                </div>
-            </div>
         </li>
-        <li>
-            <img src="/assets/services-img/Rectangle23.png" alt="Distribuidoras">
-            <div class="service-body">
-                <span class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
-                        <path d="M51 36.0352L21.7957 45.2465L14.0727 13.1398L11.5502 2.64062L9.50111 3.21459" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M33.2682 20.8953L30.5713 9.62617C30.3969 8.88422 29.718 8.44324 29.0578 8.64622L15.2747 12.7759C14.6145 12.9719 14.2221 13.7418 14.3965 14.4838L17.1868 26.0749C17.3674 26.8239 18.0587 27.2648 18.7252 27.0478L32.4149 22.5962C33.0626 22.3862 33.4425 21.6303 33.2682 20.9023V20.8953Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M45.0645 35.8671L41.832 21.7422C41.6638 20.9932 40.9787 20.5452 40.3185 20.7482L18.8497 27.1808C18.1958 27.3767 17.8034 28.1327 17.9715 28.8747L21.2974 43.3426C21.4718 44.0985 22.1632 44.5465 22.8296 44.3295L44.1987 37.554C44.8465 37.351 45.2264 36.6021 45.0582 35.8671H45.0645Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M22.3064 32.0034L22.8234 33.7323" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M23.3341 36.0352L25.3832 42.9436" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M27.1271 24.696L28.9084 31.5555C29.0205 31.9895 29.5125 32.1225 29.7865 31.7865L30.7955 30.5546C30.9325 30.3866 31.1443 30.3236 31.3436 30.3936L33.1685 31.0795C33.5609 31.2265 33.947 30.8205 33.8287 30.3656L32.0474 23.3661" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M19.9521 12.0269L21.7334 18.8864C21.8455 19.3204 22.3376 19.4534 22.6116 19.1174L23.6206 17.8855C23.7576 17.7175 23.9694 17.6545 24.1687 17.7245L25.9935 18.4105C26.3859 18.5575 26.7721 18.1515 26.6537 17.6965L24.8725 10.697" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M37.6466 21.5463L39.7269 29.1267" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M40.2438 31.4294L40.7857 33.4453" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M6.69386 1.67713L2.88016 3.05072C1.84178 3.42472 1.26978 4.67392 1.60257 5.84089L1.80406 6.54743C2.13685 7.7144 3.24841 8.35723 4.28679 7.98323L8.10049 6.60964C9.13887 6.23565 9.71087 4.98644 9.37808 3.81948L9.17659 3.11294C8.8438 1.94597 7.73224 1.30314 6.69386 1.67713Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M26.4108 50.4331C28.1101 50.4331 29.4876 48.885 29.4876 46.9753C29.4876 45.0657 28.1101 43.5176 26.4108 43.5176C24.7116 43.5176 23.3341 45.0657 23.3341 46.9753C23.3341 48.885 24.7116 50.4331 26.4108 50.4331Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M46.9018 44.6725C48.6011 44.6725 49.9786 43.1244 49.9786 41.2147C49.9786 39.305 48.6011 37.757 46.9018 37.757C45.2026 37.757 43.8251 39.305 43.8251 41.2147C43.8251 43.1244 45.2026 44.6725 46.9018 44.6725Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M18.2082 51H31.5118" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M33.4239 51H36.0086" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                    </svg>
-                </span>
-                <div class="service-text">
-                    <h3>Distribuidoras</h3>
-                    <p>{{distribuidoras}}</p>
+    </ul> -->
+    <div class="service-box">
+        <ul class="services-list">
+            <li>
+                <img src="/assets/services-img/Rectangle21.png" alt="Restaurantes">
+                <div class="service-body">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                            <path d="M43.1479 39.8198L9.49482 7.14894C8.77608 6.45416 7.59414 6.74964 7.2747 7.69199C6.61186 9.59266 6.14069 12.8669 8.16914 16.9558C10.9802 22.6338 19.078 29.2223 21.362 31.0032C21.7374 31.2987 22.2325 31.3705 22.6797 31.1948L24.6124 30.4521C25.0835 30.2685 25.6186 30.3643 25.9939 30.6997L27.08 31.658C27.4075 31.9535 27.5752 32.3848 27.5273 32.824L27.3036 34.7247C27.2557 35.1559 27.4155 35.5792 27.7269 35.8747L38.2445 45.5936C38.8195 46.1287 39.7299 46.0568 40.217 45.4419L43.2757 41.6246C43.7069 41.0815 43.659 40.2989 43.1639 39.8118L43.1479 39.8198Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M15.1649 30.8195L6.68376 39.8037C5.58967 40.9617 5.59766 42.7905 6.70772 43.9405L6.81154 44.0443C7.95354 45.2262 9.83025 45.2422 10.9962 44.0842L20.6433 34.501" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M27.8307 19.9744L29.4439 18.1935C30.1227 17.4428 30.4981 16.4606 30.4981 15.4463V15.2547C30.4981 14.2165 30.8974 13.2102 31.6081 12.4516L39.0351 4.54541" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M30.9772 22.3223L32.7581 20.7091C33.5088 20.0303 34.4911 19.655 35.5053 19.655H35.697C36.7352 19.655 37.7414 19.2557 38.5001 18.5449L46.4062 11.1179" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M34.3394 15.7099L42.3733 7.84363" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                    <div class="service-text">
+                        <h3>Restaurantes</h3>
+                        <p>{{restaurantes}}</p>
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li>
-            <img src="/assets/services-img/Rectangle25.png" alt="eCommercce">
-            <div class="service-body">
-                <span class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
-                        <path d="M8.95941 33.7496V4.55032C8.95941 3.13892 10.676 2 12.7799 2H48.1796C50.2939 2 52 3.14591 52 4.55032V49.4497C52 50.8611 50.2834 52 48.1796 52H12.7799C10.6656 52 8.95941 50.8541 8.95941 49.4497V41.0582" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M2.29189 41.8127L4.39578 43.2171C4.77259 43.4687 5.37966 43.4687 5.74601 43.2171L9.55603 40.6738C9.93285 40.4223 10.54 40.4223 10.9063 40.6738L12.6124 41.8127C13.1044 42.1411 13.9417 42.0224 14.1929 41.5822L19.0392 32.7993C19.3113 32.3032 18.6205 31.8141 17.8669 31.9679L4.14458 34.7138C3.42235 34.8605 3.22345 35.4754 3.78867 35.8038L6.16471 37.1942C6.57293 37.4318 6.60433 37.851 6.22751 38.1165L2.26052 40.9184C1.90464 41.1699 1.91506 41.5612 2.28141 41.8057L2.29189 41.8127Z" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M27.4652 48.2688H38.8534" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M43.909 48.2688H46.599" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M23.1632 2.29346L23.8122 4.8927C23.9378 5.3818 24.5763 5.74511 25.3195 5.74511H35.6504C36.3936 5.74511 37.0321 5.3818 37.1577 4.8927L37.8067 2.29346H23.1737H23.1632Z" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M14.5489 16.6591H20.2743C20.4941 16.6591 20.6826 16.7708 20.714 16.9176L23.1632 29.2289H41.0201" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M23.1632 26.9162H38.5603C39.2721 26.9162 39.9001 26.5948 40.0676 26.1266L42.4645 19.7054C42.7157 19.0416 41.9517 18.3988 40.9259 18.4128L21.0594 18.6923" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M26.6069 20.9701V24.4217" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M31.5579 20.9701V24.4217" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M36.5088 20.9701V24.4217" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M26.6069 32.7505C28.0348 32.7505 29.1923 31.9778 29.1923 31.0246C29.1923 30.0715 28.0348 29.2988 26.6069 29.2988C25.1791 29.2988 24.0215 30.0715 24.0215 31.0246C24.0215 31.9778 25.1791 32.7505 26.6069 32.7505Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M36.0796 32.7505C37.5075 32.7505 38.665 31.9778 38.665 31.0246C38.665 30.0715 37.5075 29.2988 36.0796 29.2988C34.6518 29.2988 33.4942 30.0715 33.4942 31.0246C33.4942 31.9778 34.6518 32.7505 36.0796 32.7505Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                    </svg>
-                </span>
-                <div class="service-text">
-                    <h3>eCommercce</h3>
-                    <p>{{ecommerce}}</p>
+            </li>
+            <li>
+                <img src="/assets/services-img/Rectangle25.png" alt="eCommercce">
+                <div class="service-body">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
+                            <path d="M8.95941 33.7496V4.55032C8.95941 3.13892 10.676 2 12.7799 2H48.1796C50.2939 2 52 3.14591 52 4.55032V49.4497C52 50.8611 50.2834 52 48.1796 52H12.7799C10.6656 52 8.95941 50.8541 8.95941 49.4497V41.0582" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M2.29189 41.8127L4.39578 43.2171C4.77259 43.4687 5.37966 43.4687 5.74601 43.2171L9.55603 40.6738C9.93285 40.4223 10.54 40.4223 10.9063 40.6738L12.6124 41.8127C13.1044 42.1411 13.9417 42.0224 14.1929 41.5822L19.0392 32.7993C19.3113 32.3032 18.6205 31.8141 17.8669 31.9679L4.14458 34.7138C3.42235 34.8605 3.22345 35.4754 3.78867 35.8038L6.16471 37.1942C6.57293 37.4318 6.60433 37.851 6.22751 38.1165L2.26052 40.9184C1.90464 41.1699 1.91506 41.5612 2.28141 41.8057L2.29189 41.8127Z" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M27.4652 48.2688H38.8534" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M43.909 48.2688H46.599" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M23.1632 2.29346L23.8122 4.8927C23.9378 5.3818 24.5763 5.74511 25.3195 5.74511H35.6504C36.3936 5.74511 37.0321 5.3818 37.1577 4.8927L37.8067 2.29346H23.1737H23.1632Z" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M14.5489 16.6591H20.2743C20.4941 16.6591 20.6826 16.7708 20.714 16.9176L23.1632 29.2289H41.0201" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M23.1632 26.9162H38.5603C39.2721 26.9162 39.9001 26.5948 40.0676 26.1266L42.4645 19.7054C42.7157 19.0416 41.9517 18.3988 40.9259 18.4128L21.0594 18.6923" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M26.6069 20.9701V24.4217" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M31.5579 20.9701V24.4217" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M36.5088 20.9701V24.4217" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M26.6069 32.7505C28.0348 32.7505 29.1923 31.9778 29.1923 31.0246C29.1923 30.0715 28.0348 29.2988 26.6069 29.2988C25.1791 29.2988 24.0215 30.0715 24.0215 31.0246C24.0215 31.9778 25.1791 32.7505 26.6069 32.7505Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M36.0796 32.7505C37.5075 32.7505 38.665 31.9778 38.665 31.0246C38.665 30.0715 37.5075 29.2988 36.0796 29.2988C34.6518 29.2988 33.4942 30.0715 33.4942 31.0246C33.4942 31.9778 34.6518 32.7505 36.0796 32.7505Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                    <div class="service-text">
+                        <h3>eCommercce</h3>
+                        <p>{{ecommerce}}</p>
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li>
-            <img src="/assets/services-img/Rectangle27.png" alt="Autopeças">
-            <div class="service-body">
-                <span class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="53" viewBox="0 0 52 53" fill="none">
-                        <path d="M36.7597 14.1802C37.6809 15.7082 38.196 17.457 38.196 19.3117C38.196 25.3265 32.7282 30.2108 25.9728 30.2108C19.2174 30.2108 13.7497 25.3354 13.7497 19.3117C13.7497 17.5894 14.1954 15.9643 14.9978 14.5158" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M13.7497 12.7669V5.45382C13.7497 3.70502 15.3247 2.27419 17.2958 2.24769L34.5409 2.00036C36.5517 1.97386 38.196 3.41353 38.196 5.20649V12.0869C38.196 13.606 36.3139 14.4981 34.8876 13.6767C30.8759 11.3715 23.8432 8.86306 17.2958 14.1978C15.9388 15.3018 13.7497 14.4097 13.7497 12.7669Z" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M21.9018 6.23108C21.9018 6.23108 25.9728 4.77375 29.6081 6.23108" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M6.96462 51.9735L1.73466 48.3435C1.12054 47.9195 0.862954 47.2041 1.07097 46.5416L3.92369 37.6299C3.95341 37.5239 4.03267 37.4444 4.13172 37.3914L16.86 31.0498C16.9987 30.9791 17.1671 30.988 17.3057 31.0586C19.4849 32.2422 22.5357 32.9134 23.3282 33.0812C23.4569 33.1077 23.556 33.1784 23.6154 33.2844L25.2894 36.0842C25.4677 36.3757 25.9431 36.3668 26.0917 36.0577L27.4785 33.3374C27.5379 33.2137 27.6766 33.1254 27.8251 33.1077C29.4991 32.9488 33.8178 31.3589 34.7489 31.0057C34.8678 30.9615 34.9966 30.9703 35.1055 31.0145L48.5668 36.6671C48.6956 36.7201 48.7847 36.8261 48.8144 36.9498L50.9638 46.5329C51.1124 47.2041 50.7955 47.893 50.1516 48.2728L43.8816 52L6.94479 51.9735H6.96462Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M39.0776 44.9166V42.3199C39.0776 42.2404 39.1569 42.1697 39.246 42.1697H43.327C43.4557 42.1697 43.5349 42.0461 43.4755 41.9489C42.802 40.8272 41.4945 40.0676 39.9691 40.0676C38.612 40.0676 37.4135 40.677 36.6904 41.6044C36.6607 41.6398 36.6112 41.6663 36.5616 41.6663H15.6021C15.5526 41.6663 15.503 41.6398 15.4733 41.6044C14.7601 40.677 13.5616 40.0676 12.1947 40.0676C10.6693 40.0676 9.36173 40.8272 8.68817 41.9489C8.62874 42.0461 8.71791 42.1697 8.83678 42.1697H11.838C11.9272 42.1697 12.0065 42.2404 12.0065 42.3199V44.9166C12.0065 44.996 11.9272 45.0667 11.838 45.0667H8.83678C8.70801 45.0667 8.62874 45.1903 8.68817 45.2875C9.36173 46.4092 10.6693 47.1688 12.1947 47.1688C13.5517 47.1688 14.7502 46.5594 15.4733 45.632C15.503 45.5966 15.5526 45.5701 15.6021 45.5701H36.5616C36.6112 45.5701 36.6607 45.5966 36.6904 45.632C37.4036 46.5594 38.6021 47.1688 39.9691 47.1688C41.4945 47.1688 42.802 46.4092 43.4755 45.2875C43.5349 45.1903 43.4458 45.0667 43.327 45.0667H39.246C39.1569 45.0667 39.0776 44.996 39.0776 44.9166Z" stroke="#D93938" stroke-miterlimit="10" stroke-linecap="round"/>
-                    </svg>
-                </span>
-                <div class="service-text">
-                    <h3>Autopeças</h3>
-                    <p>{{autopecas}}</p>
+            </li>
+            <li>
+                <img src="/assets/services-img/Rectangle29.png" alt="Entrega de documentos">
+                <div class="service-body">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="53" height="52" viewBox="0 0 53 52" fill="none">
+                            <path d="M7.99002 31.9632H3.61012C2.16861 31.9632 1 32.9989 1 34.2764V47.2687C1 48.5463 2.16861 49.5819 3.61012 49.5819H7.99002C9.43153 49.5819 10.6001 48.5463 10.6001 47.2687V34.2764C10.6001 32.9989 9.43153 31.9632 7.99002 31.9632Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M12.8169 36.3283L24.6249 33.714C25.4472 33.5318 26.3143 33.8249 26.788 34.4428L27.6014 35.5044C28.1288 36.1857 28.0573 37.0967 27.4316 37.7147C26.2785 38.8475 27.1545 40.6537 28.8707 40.7013L43.2798 41.1132C44.9424 41.1608 45.8362 42.8719 44.7904 44.0206L39.0965 50.3266C38.7122 50.7544 38.1311 51 37.5144 51H13.2996C12.1822 51 11.2794 50.1999 11.2794 49.2096V38.0632C11.2794 37.2393 11.9141 36.5264 12.808 36.3283H12.8169Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M42.073 1.62158C41.8853 1.13041 41.2775 0.87689 40.7323 1.0591L29.8897 4.79835C29.6305 4.8855 29.4249 5.06771 29.3177 5.29745L25.5455 13.37C25.4472 13.576 25.4382 13.8057 25.5276 14.0196L31.8651 30.0144C32.0529 30.4976 32.6517 30.7432 33.188 30.561L50.3323 24.865C50.8597 24.6907 51.1279 24.1758 50.9402 23.7084L43.968 6.30352" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M25.3846 13.6948L30.5601 12.0074C31.2841 11.7698 31.6685 11.0726 31.4361 10.423L29.4696 4.94885" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M33.5903 15.406L42.1267 12.5858" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M34.0641 19.6602L42.6094 16.8399" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M35.1456 23.9777L43.682 21.1575" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                    <div class="service-text">
+                        <h3>Entrega de documentos</h3>
+                        <p>{{documentos}}</p>
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li>
-            <img src="/assets/services-img/Rectangle28.png" alt="Farmácias">
-            <div class="service-body">
-                <span class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
-                        <path d="M46.1798 1H5.82018C3.15807 1 1 3.09995 1 5.69034V46.3097C1 48.9001 3.15807 51 5.82018 51H46.1798C48.8419 51 51 48.9001 51 46.3097V5.69034C51 3.09995 48.8419 1 46.1798 1Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M37.2063 22.6199H30.166V15.7692C30.166 14.7014 29.2796 13.8389 28.1822 13.8389H24.5185C23.4211 13.8389 22.5347 14.7014 22.5347 15.7692V22.6199H15.4944C14.3969 22.6199 13.5106 23.4824 13.5106 24.5503V28.1152C13.5106 29.183 14.3969 30.0456 15.4944 30.0456H22.5347V36.8962C22.5347 37.9641 23.4211 38.8265 24.5185 38.8265H28.1822C29.2796 38.8265 30.166 37.9641 30.166 36.8962V30.0456H37.2063C38.3037 30.0456 39.1901 29.183 39.1901 28.1152V24.5503C39.1901 23.4824 38.3037 22.6199 37.2063 22.6199Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                    </svg>
-                </span>
-                <div class="service-text">
-                    <h3>Farmácias</h3>
-                    <p>{{farmacias}}</p>
+            </li>
+            <li>
+                <img src="/assets/services-img/Rectangle23.png" alt="Distribuidoras">
+                <div class="service-body">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+                            <path d="M51 36.0352L21.7957 45.2465L14.0727 13.1398L11.5502 2.64062L9.50111 3.21459" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M33.2682 20.8953L30.5713 9.62617C30.3969 8.88422 29.718 8.44324 29.0578 8.64622L15.2747 12.7759C14.6145 12.9719 14.2221 13.7418 14.3965 14.4838L17.1868 26.0749C17.3674 26.8239 18.0587 27.2648 18.7252 27.0478L32.4149 22.5962C33.0626 22.3862 33.4425 21.6303 33.2682 20.9023V20.8953Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M45.0645 35.8671L41.832 21.7422C41.6638 20.9932 40.9787 20.5452 40.3185 20.7482L18.8497 27.1808C18.1958 27.3767 17.8034 28.1327 17.9715 28.8747L21.2974 43.3426C21.4718 44.0985 22.1632 44.5465 22.8296 44.3295L44.1987 37.554C44.8465 37.351 45.2264 36.6021 45.0582 35.8671H45.0645Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M22.3064 32.0034L22.8234 33.7323" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M23.3341 36.0352L25.3832 42.9436" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M27.1271 24.696L28.9084 31.5555C29.0205 31.9895 29.5125 32.1225 29.7865 31.7865L30.7955 30.5546C30.9325 30.3866 31.1443 30.3236 31.3436 30.3936L33.1685 31.0795C33.5609 31.2265 33.947 30.8205 33.8287 30.3656L32.0474 23.3661" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M19.9521 12.0269L21.7334 18.8864C21.8455 19.3204 22.3376 19.4534 22.6116 19.1174L23.6206 17.8855C23.7576 17.7175 23.9694 17.6545 24.1687 17.7245L25.9935 18.4105C26.3859 18.5575 26.7721 18.1515 26.6537 17.6965L24.8725 10.697" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M37.6466 21.5463L39.7269 29.1267" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M40.2438 31.4294L40.7857 33.4453" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M6.69386 1.67713L2.88016 3.05072C1.84178 3.42472 1.26978 4.67392 1.60257 5.84089L1.80406 6.54743C2.13685 7.7144 3.24841 8.35723 4.28679 7.98323L8.10049 6.60964C9.13887 6.23565 9.71087 4.98644 9.37808 3.81948L9.17659 3.11294C8.8438 1.94597 7.73224 1.30314 6.69386 1.67713Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M26.4108 50.4331C28.1101 50.4331 29.4876 48.885 29.4876 46.9753C29.4876 45.0657 28.1101 43.5176 26.4108 43.5176C24.7116 43.5176 23.3341 45.0657 23.3341 46.9753C23.3341 48.885 24.7116 50.4331 26.4108 50.4331Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M46.9018 44.6725C48.6011 44.6725 49.9786 43.1244 49.9786 41.2147C49.9786 39.305 48.6011 37.757 46.9018 37.757C45.2026 37.757 43.8251 39.305 43.8251 41.2147C43.8251 43.1244 45.2026 44.6725 46.9018 44.6725Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M18.2082 51H31.5118" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M33.4239 51H36.0086" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                    <div class="service-text">
+                        <h3>Distribuidoras</h3>
+                        <p>{{distribuidoras}}</p>
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li>
-            <img src="/assets/services-img/Rectangle29.png" alt="Entrega de documentos">
-            <div class="service-body">
-                <span class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="53" height="52" viewBox="0 0 53 52" fill="none">
-                        <path d="M7.99002 31.9632H3.61012C2.16861 31.9632 1 32.9989 1 34.2764V47.2687C1 48.5463 2.16861 49.5819 3.61012 49.5819H7.99002C9.43153 49.5819 10.6001 48.5463 10.6001 47.2687V34.2764C10.6001 32.9989 9.43153 31.9632 7.99002 31.9632Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M12.8169 36.3283L24.6249 33.714C25.4472 33.5318 26.3143 33.8249 26.788 34.4428L27.6014 35.5044C28.1288 36.1857 28.0573 37.0967 27.4316 37.7147C26.2785 38.8475 27.1545 40.6537 28.8707 40.7013L43.2798 41.1132C44.9424 41.1608 45.8362 42.8719 44.7904 44.0206L39.0965 50.3266C38.7122 50.7544 38.1311 51 37.5144 51H13.2996C12.1822 51 11.2794 50.1999 11.2794 49.2096V38.0632C11.2794 37.2393 11.9141 36.5264 12.808 36.3283H12.8169Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M42.073 1.62158C41.8853 1.13041 41.2775 0.87689 40.7323 1.0591L29.8897 4.79835C29.6305 4.8855 29.4249 5.06771 29.3177 5.29745L25.5455 13.37C25.4472 13.576 25.4382 13.8057 25.5276 14.0196L31.8651 30.0144C32.0529 30.4976 32.6517 30.7432 33.188 30.561L50.3323 24.865C50.8597 24.6907 51.1279 24.1758 50.9402 23.7084L43.968 6.30352" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M25.3846 13.6948L30.5601 12.0074C31.2841 11.7698 31.6685 11.0726 31.4361 10.423L29.4696 4.94885" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M33.5903 15.406L42.1267 12.5858" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M34.0641 19.6602L42.6094 16.8399" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <path d="M35.1456 23.9777L43.682 21.1575" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-                    </svg>
-                </span>
-                <div class="service-text">
-                    <h3>Entrega de documentos</h3>
-                    <p>{{documentos}}</p>
+            </li>
+            <li>
+                <img src="/assets/services-img/Rectangle28.png" alt="Farmácias">
+                <div class="service-body">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+                            <path d="M46.1798 1H5.82018C3.15807 1 1 3.09995 1 5.69034V46.3097C1 48.9001 3.15807 51 5.82018 51H46.1798C48.8419 51 51 48.9001 51 46.3097V5.69034C51 3.09995 48.8419 1 46.1798 1Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M37.2063 22.6199H30.166V15.7692C30.166 14.7014 29.2796 13.8389 28.1822 13.8389H24.5185C23.4211 13.8389 22.5347 14.7014 22.5347 15.7692V22.6199H15.4944C14.3969 22.6199 13.5106 23.4824 13.5106 24.5503V28.1152C13.5106 29.183 14.3969 30.0456 15.4944 30.0456H22.5347V36.8962C22.5347 37.9641 23.4211 38.8265 24.5185 38.8265H28.1822C29.2796 38.8265 30.166 37.9641 30.166 36.8962V30.0456H37.2063C38.3037 30.0456 39.1901 29.183 39.1901 28.1152V24.5503C39.1901 23.4824 38.3037 22.6199 37.2063 22.6199Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                    <div class="service-text">
+                        <h3>Farmácias</h3>
+                        <p>{{farmacias}}</p>
+                    </div>
                 </div>
-            </div>
-        </li>
-    </ul>
-    <div class="arrows">
-        <mat-icon (click)="prev()">keyboard_arrow_left</mat-icon>
-        <mat-icon (click)="next()">keyboard_arrow_right</mat-icon>
+            </li>
+            <li>
+                <img src="/assets/services-img/Rectangle27.png" alt="Autopeças">
+                <div class="service-body">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="53" viewBox="0 0 52 53" fill="none">
+                            <path d="M36.7597 14.1802C37.6809 15.7082 38.196 17.457 38.196 19.3117C38.196 25.3265 32.7282 30.2108 25.9728 30.2108C19.2174 30.2108 13.7497 25.3354 13.7497 19.3117C13.7497 17.5894 14.1954 15.9643 14.9978 14.5158" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M13.7497 12.7669V5.45382C13.7497 3.70502 15.3247 2.27419 17.2958 2.24769L34.5409 2.00036C36.5517 1.97386 38.196 3.41353 38.196 5.20649V12.0869C38.196 13.606 36.3139 14.4981 34.8876 13.6767C30.8759 11.3715 23.8432 8.86306 17.2958 14.1978C15.9388 15.3018 13.7497 14.4097 13.7497 12.7669Z" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M21.9018 6.23108C21.9018 6.23108 25.9728 4.77375 29.6081 6.23108" stroke="#D93938" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M6.96462 51.9735L1.73466 48.3435C1.12054 47.9195 0.862954 47.2041 1.07097 46.5416L3.92369 37.6299C3.95341 37.5239 4.03267 37.4444 4.13172 37.3914L16.86 31.0498C16.9987 30.9791 17.1671 30.988 17.3057 31.0586C19.4849 32.2422 22.5357 32.9134 23.3282 33.0812C23.4569 33.1077 23.556 33.1784 23.6154 33.2844L25.2894 36.0842C25.4677 36.3757 25.9431 36.3668 26.0917 36.0577L27.4785 33.3374C27.5379 33.2137 27.6766 33.1254 27.8251 33.1077C29.4991 32.9488 33.8178 31.3589 34.7489 31.0057C34.8678 30.9615 34.9966 30.9703 35.1055 31.0145L48.5668 36.6671C48.6956 36.7201 48.7847 36.8261 48.8144 36.9498L50.9638 46.5329C51.1124 47.2041 50.7955 47.893 50.1516 48.2728L43.8816 52L6.94479 51.9735H6.96462Z" stroke="#D93938" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M39.0776 44.9166V42.3199C39.0776 42.2404 39.1569 42.1697 39.246 42.1697H43.327C43.4557 42.1697 43.5349 42.0461 43.4755 41.9489C42.802 40.8272 41.4945 40.0676 39.9691 40.0676C38.612 40.0676 37.4135 40.677 36.6904 41.6044C36.6607 41.6398 36.6112 41.6663 36.5616 41.6663H15.6021C15.5526 41.6663 15.503 41.6398 15.4733 41.6044C14.7601 40.677 13.5616 40.0676 12.1947 40.0676C10.6693 40.0676 9.36173 40.8272 8.68817 41.9489C8.62874 42.0461 8.71791 42.1697 8.83678 42.1697H11.838C11.9272 42.1697 12.0065 42.2404 12.0065 42.3199V44.9166C12.0065 44.996 11.9272 45.0667 11.838 45.0667H8.83678C8.70801 45.0667 8.62874 45.1903 8.68817 45.2875C9.36173 46.4092 10.6693 47.1688 12.1947 47.1688C13.5517 47.1688 14.7502 46.5594 15.4733 45.632C15.503 45.5966 15.5526 45.5701 15.6021 45.5701H36.5616C36.6112 45.5701 36.6607 45.5966 36.6904 45.632C37.4036 46.5594 38.6021 47.1688 39.9691 47.1688C41.4945 47.1688 42.802 46.4092 43.4755 45.2875C43.5349 45.1903 43.4458 45.0667 43.327 45.0667H39.246C39.1569 45.0667 39.0776 44.996 39.0776 44.9166Z" stroke="#D93938" stroke-miterlimit="10" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                    <div class="service-text">
+                        <h3>Autopeças</h3>
+                        <p>{{autopecas}}</p>
+                    </div>
+                </div>
+            </li>
+            
+            
+        </ul>
+
     </div>
+    
 </section>

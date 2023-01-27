@@ -11,7 +11,7 @@ export class ServicesComponent {
   agilidade: string = "Otimização do tempo de entrega.";
   seguranca: string = "Motos com equipamento adequado para a operação de entrega.";
   qualidade: string = "Motoboys, treinados, uniformizados e regularizados.";
-  transparencia: string = "Mussum Ipsum, cacilds vidis litro abertis.";
+  transparencia: string = "Acompanhe o andamento de suas entregas com o nosso suporte online.";
 
   restaurantes: string = "Nossos profissionais garantem que a comida chegue na temperatura ideal ao seu cliente.";
   distribuidoras: string = "Entregamos a bebida na casa do seu cliente em poucos minutos.";
@@ -23,7 +23,7 @@ export class ServicesComponent {
     this.itemActive -= 330;
     console.log(this.itemActive)
 
-    if(this.itemActive !== -1650) {
+    if(this.itemActive !== -1980) {
   
       document.querySelector('.services-list')?.setAttribute('style', 
       `transition:all ease-in-out .2s;-moz-transform: translateX(${this.itemActive}px);-webkit-transform: translateX(${this.itemActive}px);-o-transform: translateX(${this.itemActive}px);-ms-transform: translateX(${this.itemActive}px);transform: translateX(${this.itemActive}px);`)

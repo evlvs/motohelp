@@ -31,8 +31,9 @@ export class PointFieldComponent {
     this.isValid = false;
     this.isInvalid = false;
     this.budgetService.isValid = false;
-
+    console.log(address, this.point[0]?.address)
     if(address !== '') {
+       address !== this.point[0]?.address ? this.point = [] : null;
       clearTimeout(this.timeType)
       this.timeType = setTimeout(() => {
         this.point.length <= 0 ? this.searchLatLngPoint(address) : null

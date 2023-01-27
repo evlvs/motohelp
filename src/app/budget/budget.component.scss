@@ -72,6 +72,8 @@
             width: 55%;
           
             ::ng-deep {
+
+                
                 .mat-horizontal-stepper-wrapper {
                     .mat-horizontal-stepper-header-container {
                         background-color: var(--red);
@@ -124,8 +126,10 @@
                     }
 
                     .date-field {
-                        margin: 0 calc(46px + 46px);
+                        margin: 0 calc(46px);
+                        // margin-top: 1rem;                            
 
+                        
                         ::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
                             font-family: 'Montserrat';
                             font-style: normal;
@@ -145,7 +149,7 @@
                         margin: 0 46px;
                         list-style-type: circle;
                         justify-content: space-evenly;
-                        
+                        gap:1rem;
 
                         li {
                             position: relative;
@@ -162,6 +166,7 @@
                                 letter-spacing: 0.03em;
                                 color: #D93938;
                                 margin-left: 2rem;
+                                margin-bottom: 0;
                             }
 
                             &:before{
@@ -227,6 +232,8 @@
             .cotacao_form {
                 display: flex;
                 margin: 46px;
+                justify-content: normal;
+                gap: 1rem;
 
                 .nome, .sobrenome, .telephone, .company {
                     width: calc(50% - 1rem)!important;
@@ -261,13 +268,38 @@
 
 @media (max-width: 738px) {
     .main-budget {
+        .divider {
+            height: 110px;
+        }
         .budget {
             flex-direction: column;
             flex-wrap: wrap;
 
             .budget-form {
                 width: 100%;
+                ::ng-deep {
+                    .mat-step-header {
+                        padding: 0 16px!important;
+                        width: 33.3%!important;
+                        display: flex!important;
+                        justify-content: center!important;
 
+                        .mat-step-label {
+                            .mat-step-text-label {
+                                display: flex;
+                                white-space: break-spaces;
+                                line-height: 16px;
+                            }
+                        }
+                    }
+
+                    .mat-stepper-horizontal-line {
+                        min-width: 0;
+                        width: 0;
+                        visibility: hidden;
+                    }
+                }
+                
                 form {
                     min-height: auto;
 
@@ -285,16 +317,23 @@
 
                         .od_forms {
                             min-height: auto;
-                            margin: 0 1rem;
+                            margin: 2rem 1rem;
+
+                            h4 {
+                                font-size: 12px!important;
+                                line-height: 12px!important;
+                            }
                         }
                     }
                 }
 
                 .cotacao_form {
                     gap: .5rem;
+                    
 
                     .row {
                         flex-wrap: wrap;
+                        gap: 1rem;
                         
                         .nome, .sobrenome, .telephone, .company {
                             width: 100%!important;

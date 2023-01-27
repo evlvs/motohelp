@@ -93,8 +93,9 @@ export class MapComponent implements AfterViewInit, OnChanges {
           var summary = routes[0].summary;
           console.log(routes[0])
           this.distance = summary.totalDistance / 1000;
-          this.time = Math.round(summary.totalTime % 3600 / 60);
-          console.log(waypoints.length)
+          this.time = Math.round(summary.totalTime / 60);
+
+          console.log(summary.totalTime)
           if(this.distance <= 8) {
             this.price = 25 + ((waypoints.length - 2) * 5)
             this.price = Math.round(this.price)

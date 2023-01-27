@@ -1,20 +1,21 @@
-<section class="main-budget">
+<section class="main-budget" id="budget">
     <div class="divider"></div>
     <div class="budget">
         
       <mat-stepper class="budget-form" #stepper *ngIf="!sendLoading" [linear]="true">
         <mat-step [stepControl]="service.rotaFormGroup">
           <form [formGroup]="service.rotaFormGroup">
-            <ng-template matStepLabel>Rota</ng-template>
+            <ng-template matStepLabel class="step-name">Rota</ng-template>
            
             <div class="rota">
-              <mat-form-field appearance="fill" class="date-field">
-                <mat-label class="label-data">Selecione a data estimada</mat-label>
-                <input matInput [matDatepicker]="picker" formControlName="dataCotacao">
-                <mat-datepicker-toggle matIconPrefix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field>
+              
               <ul class="od_forms">
+                  <mat-form-field appearance="fill" class="date-field">
+                    <mat-label class="label-data">Selecione uma data</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="dataCotacao">
+                    <mat-datepicker-toggle matIconPrefix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
                 <li>
                   <app-point-field 
                     fieldName="Origem"
@@ -30,8 +31,8 @@
 
                   <button class="btn-remove" type="button" (click)="removePoint(i)">x</button>
                 </li>
-                
               </ul>
+              
               <button (click)="addPoint()" class="add-point">
                 <span class="icon">+</span>
                 <span>Adicionar ponto</span>
@@ -40,14 +41,18 @@
             <pre>
             </pre>
             <div class="footer-stepper end">
-              
-              <button mat-button matStepperNext class="primary-btn" [disabled]="!service.rotaFormGroup.valid"  (click)="confirmRoute(service.rotaFormGroup)">Calcular Rotas</button>
+              <button mat-raised-button 
+              matStepperNext 
+              color="primary" 
+              [disabled]="!service.rotaFormGroup.valid" 
+              class="header-button" 
+              (click)="confirmRoute(service.rotaFormGroup)">Calcular Rotas</button>
             </div>
           </form>
         </mat-step>
         <mat-step [stepControl]="service.custoFormGroup">
           <form [formGroup]="service.custoFormGroup">
-            <ng-template matStepLabel>Cotação</ng-template>
+            <ng-template matStepLabel class="step-name">Help expresso</ng-template>
             <div class="rota">
               <div class="marker-slider">
                 <span class="circle active"></span>
@@ -72,12 +77,17 @@
             </div>
             <div class="footer-stepper">
               <button mat-button matStepperPrevious>Voltar</button>
-              <button mat-button matStepperNext class="primary-btn" [disabled]="!service.custoFormGroup.valid" >Continuar</button>
+              <button mat-raised-button 
+              matStepperNext 
+              color="primary" 
+              [disabled]="!service.custoFormGroup.valid" 
+              class="header-button">Continuar</button>
+              <!-- <button mat-button matStepperNext class="primary-btn" [disabled]="!service.custoFormGroup.valid" >Continuar</button> -->
             </div>
           </form>
         </mat-step>
         <mat-step>
-          <ng-template matStepLabel>Solicitar motoboy</ng-template>
+          <ng-template matStepLabel class="step-name">Solicitar motoboy</ng-template>
           <form [formGroup]="service.cotacaoFormGroup" class="cotacao_form">
             <div class="row">
               <mat-form-field appearance="outline" class="cotacao nome">
@@ -87,34 +97,6 @@
               <mat-form-field appearance="outline" class="cotacao sobrenome">
                 <mat-label>Sobrenome</mat-label>
                 <input matInput formControlName="sobrenome">
-              </mat-form-field>
-            </div>
-            <div class="row">
-              <mat-form-field appearance="outline" class="cotacao email">
-                <mat-label>Email</mat-label>
-                <input matInput type="email" formControlName="email">
-              </mat-form-field>
-            </div>
-
-            <div class="row">
-              <mat-form-field appearance="outline" class="cotacao telephone">
-                <mat-label>Telefone de contato</mat-label>
-                <input matInput type="tel" formControlName="telephone">
-              </mat-form-field>
-              <mat-form-field appearance="outline" class="cotacao company">
-                <mat-label>Empresa</mat-label>
-                <input matInput type="text" formControlName="company">
-              </mat-form-field>
-            </div>
-
-            <div class="row">
-              <mat-form-field appearance="outline" class="cotacao delivery">
-                <mat-label>Qual tipo de entrega deseja fazer?</mat-label>
-                <mat-select formControlName="delivery">
-                  <mat-option value="Entrega de produtos">Entrega de produtos</mat-option>
-                  <mat-option value="Entrega de documentos">Entrega de documentos</mat-option>
-                  <mat-option value="Entrega de comidas">Entrega de comidas</mat-option>
-                </mat-select>
               </mat-form-field>
             </div>
 
@@ -130,10 +112,16 @@
               </mat-form-field>
             </div>
           
-          <div>
-            <button mat-button matStepperPrevious>Voltar</button>
-            <button mat-button (click)="sendMessage()" [disabled]="!service.cotacaoFormGroup.valid">Enviar</button>
-          </div>
+            <div class="footer-stepper">
+              <button mat-button matStepperPrevious>Voltar</button>
+              <button mat-raised-button 
+              matStepperNext 
+              color="primary" 
+              [disabled]="!service.cotacaoFormGroup.valid"
+              class="header-button"
+              (click)="sendMessage()">Help expresso</button>
+              <!-- <button mat-button  ></button> -->
+            </div>
           </form>
         </mat-step>
       </mat-stepper>

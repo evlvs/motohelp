@@ -53,6 +53,19 @@ letter-spacing: 0.03em;
     background-color: var(--red)!important;
 }
 
+::ng-deep .mat-mdc-raised-button:not(:disabled).mat-secondary {
+    background-color: var(--lightGray)!important;
+    margin: 1rem;
+    color: var(--gray);
+
+    .mdc-button__label {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        gap: .75rem;
+    }
+}
+
 ::ng-deep .mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle, .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {
     stroke: var(--red, transparent) !important;
 }
@@ -81,3 +94,9 @@ letter-spacing: 0.03em;
     border-color: rgba(217, 57, 56, 1)!important;
 }
 
+@media (max-width: 738px) {
+    ::ng-deep .mat-mdc-raised-button:not(:disabled).mat-secondary {
+        width: 100%;
+        margin: 1rem 0;
+    }
+}

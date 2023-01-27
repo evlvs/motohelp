@@ -25,10 +25,6 @@ export class BudgetService {
   cotacaoFormGroup = this._formBuilder.group({
     nome: ['', Validators.required],
     sobrenome: ['', Validators.required],
-    email: ['', Validators.required],
-    telephone: ['', Validators.required],
-    company: [''],
-    delivery: ['', Validators.required],
     message: ['']
   });
 

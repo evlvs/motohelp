@@ -3,7 +3,7 @@ section {
     justify-content: center;
     align-items: flex-end;
     height: 100vh;
-    width: 100vw;
+    // width: calc(100vw);
     padding: 0 15vw;
     background: url('/assets/bg.png');
     background-position: center center;
@@ -27,7 +27,7 @@ section {
             font-family: 'Montserrat';
             font-style: normal;
             font-weight: 700;
-            font-size: 48px;
+            font-size: 3rem;
             line-height: 59px;
             letter-spacing: 0.03em;
         }
@@ -36,7 +36,7 @@ section {
             font-family: 'Montserrat';
             font-style: normal;
             font-weight: 400;
-            font-size: 20px;
+            font-size: 1.25rem;
             line-height: 24px;
             letter-spacing: 0.03em;
 
@@ -45,6 +45,7 @@ section {
 
         .header-button {
             padding: 1rem 3rem;
+            margin-top: 1rem;
         }
     }
 
@@ -52,7 +53,26 @@ section {
         max-height: 579px;
     }
 }
+@media (max-width: 1382px) {
+    section {
+        article {
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: .75rem;
+            }
+        }
 
+        picture {
+            max-height: 379px;
+
+            img {
+                max-height: 379px;
+            }
+        }
+    }
+}
 @media (max-width: 868px) {
     section {
         flex-direction: column;
@@ -61,17 +81,18 @@ section {
         align-items: center;
 
         article {
-            margin-top: 80px;
+            margin-top: 110px;
             height: auto;
 
             h1 {
-                font-size: 32px;
+                font-size: 2rem;
                 line-height: 36px;
             }
 
             p {
-                font-size: 14px;
+                font-size: .75rem;
                 line-height: 20px;
+                width: 315px;
             }
 
             .header-button {

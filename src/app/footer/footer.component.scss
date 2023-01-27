@@ -4,6 +4,10 @@ footer {
     padding: 2rem 5vw;
     padding-top: 4rem;
 
+    .whatsapp-icon {
+        width: 24px;
+    }
+
     .cotation-button {
         border-radius: 15px;
         padding: 1rem 2rem;
@@ -83,6 +87,11 @@ footer {
 
 @media (max-width: 738px) {
     footer {
+        display: flex;
+        flex-direction: column;
+        .header-button {
+            background-color: var(--gray);
+        }
         .cotation-button {
 
             width: 100%;

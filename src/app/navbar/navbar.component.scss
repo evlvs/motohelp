@@ -7,7 +7,7 @@
     position: fixed;
     top: 0;
     padding: 0 5vw;
-    // z-index: 100;
+    z-index: 100;
     width: 100%;
 
     .menu-button {
@@ -65,7 +65,8 @@
     .motohelp-nav {
         height: 60px;
         justify-content: flex-start;
-
+        padding: 0 2vw;    
+     
 
         img {
             width: auto;
@@ -100,7 +101,8 @@
         &.active {
             width: 90%;
             max-width: 320px;
-            visibility: visible;
+            visibility: visible;    
+            top: 0;
         }
 
         ul {
@@ -110,11 +112,12 @@
                 padding: 1rem 0;
                 list-style: none;
 
-                a {
+                button {
                     color: #fff;
                     text-decoration: none;
                     background-color: transparent;
                     border: none;
+                    
                 }
             }
         }
