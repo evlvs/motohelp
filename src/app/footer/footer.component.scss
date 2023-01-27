@@ -4,6 +4,12 @@ footer {
     padding: 2rem 5vw;
     padding-top: 4rem;
 
+    .mobile-logo {
+        display: none;
+        width: 205px;
+    }
+
+
     .whatsapp-icon {
         width: 24px;
     }
@@ -59,6 +65,7 @@ footer {
             justify-content: space-around;
 
             li {
+
                 a {
                     font-family: 'Montserrat';
                     font-style: normal;
@@ -89,7 +96,14 @@ footer {
     footer {
         display: flex;
         flex-direction: column;
+        align-items: center;
+
+        .mobile-logo {
+            display: block;
+        }
+
         .header-button {
+            width: 100%;
             background-color: var(--gray);
         }
         .cotation-button {
@@ -100,16 +114,30 @@ footer {
 
         nav {
             margin-bottom: 0;
-            
+            width: 100%;
+
             .motohelp-menu {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+
+                li {
+                    padding: 1rem 0;
+                }
             }
         }
 
         .footer-list {
             flex-direction: column;
+            margin-bottom: 2rem;
+
+            ul {
+                gap: 1rem;
+            }
+
+            img {
+                display: none;
+            }
         }
     }
 }
