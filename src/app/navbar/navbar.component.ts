@@ -13,4 +13,8 @@ export class NavbarComponent {
     console.log(document.getElementById(element)?.scrollIntoView({behavior: "smooth"}))
     document.getElementById(element)?.scrollIntoView({behavior: "smooth"});
   }
+
+  closeMenu() {
+    document.querySelector('.mobile-menu')?.classList.remove('active')
+  }
 }

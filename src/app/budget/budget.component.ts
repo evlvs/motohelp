@@ -102,7 +102,7 @@ export class BudgetComponent {
     message = message + ` ${this.service.cotacaoFormGroup.controls['message'].value}`
     console.log(message)
 
-    let url = `https://wa.me/5521966712061?text=${message}`
+    let url = `https://wa.me/5521967734378?text=${message}`
     window.open(url, '_blank')?.focus()
     this.notSendedMessage = false;
   }

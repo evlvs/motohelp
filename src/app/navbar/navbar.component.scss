@@ -87,9 +87,9 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: flex-end;
         margin-top: calc(60px);
-        background: #000000;
+        background: transparent;
         width: 100%;
         max-width: 0;
         visibility: collapse;
@@ -99,8 +99,8 @@
         z-index: 100;
         
         &.active {
-            width: 90%;
-            max-width: 320px;
+            width: 100%;
+            max-width: 100%;
             visibility: visible;    
             top: 0;
             right: 0;
@@ -108,6 +108,9 @@
 
         ul {
             padding: 0 5vw;
+            width: 320px;
+            background-color: #000000;
+            height: 100vh;
 
             li {
                 padding: 1rem 0;

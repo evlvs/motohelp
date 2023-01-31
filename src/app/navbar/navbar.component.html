@@ -17,7 +17,7 @@
       <mat-icon>menu</mat-icon>
     </button>
 </mat-toolbar>
-<nav [ngClass]="!mobileMenu ? 'mobile-menu' : 'mobile-menu active'">
+<nav [ngClass]="!mobileMenu ? 'mobile-menu' : 'mobile-menu active'" (click)="closeMenu()">
   <ul class="motohelp-menu">
     <li><button (click)="scrollToElement('home')">Institucional</button></li>
     <li><button (click)="scrollToElement('servicos')">Serviços</button></li>
