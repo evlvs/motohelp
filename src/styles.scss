@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 // @import '@angular/material/theming';
@@ -48,7 +48,7 @@ html {
 }
 
 html {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -74,11 +74,11 @@ body {
 //     width: 8px;               /* width of the entire scrollbar */
 //     z-index: 101;
 //   }
-  
+
 //   body::-webkit-scrollbar-track {
 //     background: #fff;        /* color of the tracking area */
 //   }
-  
+
 //   body::-webkit-scrollbar-thumb {
 //     background-color: var(--red);    /* color of the scroll thumb */
 //     border-radius: 20px;       /* roundness of the scroll thumb */
@@ -153,7 +153,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
             line-height: 17px;
             text-align: center;
             letter-spacing: 0.03em;
-    
+
             color: #1E1E1E;
         }
         table {
@@ -169,7 +169,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     .cotacao {
         width: auto!important;
 
-        
+
     }
 }
 
