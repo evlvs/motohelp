@@ -29,6 +29,7 @@ import { AdvantagesComponent } from './advantages/advantages.component';
 import {MatCardModule} from '@angular/material/card';
 import { PartnersComponent } from './partners/partners.component';
 import { FooterComponent } from './footer/footer.component';
+import { SlidingAnimationDirective } from './directives/sliding-animation.directive';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { FooterComponent } from './footer/footer.component';
     VideoPlayerComponent,
     AdvantagesComponent,
     PartnersComponent,
-    FooterComponent
+    FooterComponent,
+    SlidingAnimationDirective
   ],
   imports: [
     BrowserModule,

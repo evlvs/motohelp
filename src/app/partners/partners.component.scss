@@ -61,25 +61,31 @@
 
     .secondary-box {
         position: relative;
-
+        width: 100%;
+        overflow: hidden; 
 
         .secondary-partner {
-            width: calc(100% - 10vw);
+            width: max-content;
             display: flex;
             justify-content: space-around;
             margin: 2rem 5vw;
             gap: 3rem;
             list-style: none;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            // animation: slide 20s linear infinite; 
 
             li {
                 display: flex;
                 flex-direction: column;
-                width: 126px;
+                width: 180px;
                 // height: 126px;
                 align-items: center;
                 justify-content: center;
                 gap: 1rem;
+                border-radius: 24px;
+                background: rgba(255, 255, 255, 0.90);
+                box-shadow: 0px 12px 25.7px 0px rgba(0, 0, 0, 0.18);
+                padding: 2rem;
 
                 .img-box {
                   height: 115px;
@@ -97,13 +103,27 @@
                   font-weight: 600;
                 }
                 ul {
+                    list-style: disc !important;
 
                   li {
-                    padding: 0;
-                    margin: 0;
+                    padding: 5px 0;
+                    padding-left: 44px;
+                    // margin: 0;
                     height: auto;
                     align-items: flex-start;
                     font-weight: 600;
+                    background: none;
+                    box-shadow: none;
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        width: 18px;
+                        height: 18px;
+                        background-image: url('/assets/icons/pin.svg');
+                        position: absolute;
+                        left: 20px;
+                    }
                   }
                 }
             }
@@ -238,5 +258,13 @@
                 margin: 0 2rem;
             }
         }
+    }
+}
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Desliza para a esquerda */
     }
 }

@@ -176,3 +176,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .cancel-icon {
     transform: rotate(45deg);
 }
+
+@keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); /* Desliza para a esquerda */
+    }
+  }
