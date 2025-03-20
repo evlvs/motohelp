@@ -62,7 +62,7 @@
     .secondary-box {
         position: relative;
         width: 100%;
-        overflow: hidden; 
+        overflow: hidden;
 
         .secondary-partner {
             width: max-content;
@@ -72,13 +72,13 @@
             gap: 3rem;
             list-style: none;
             flex-wrap: nowrap;
-            // animation: slide 20s linear infinite; 
+            // animation: slide 20s linear infinite;
 
             li {
                 display: flex;
                 flex-direction: column;
                 width: 180px;
-                // height: 126px;
+                height: fit-content;
                 align-items: center;
                 justify-content: center;
                 gap: 1rem;
@@ -248,12 +248,13 @@
         }
 
         .secondary-box {
-            overflow-x: scroll;
             position: relative;
+            width: 100%;
+            overflow: hidden;
             padding: 3rem 0;
 
             .secondary-partner {
-                width: 1546px;
+                width: max-content;
                 gap: 1rem;
                 margin: 0 2rem;
             }
